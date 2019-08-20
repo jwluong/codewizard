@@ -10,10 +10,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_20_015408) do
+ActiveRecord::Schema.define(version: 2019_08_20_024641) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "battle_logs", force: :cascade do |t|
+    t.string "user_answer"
+    t.bigint "user_id"
+    t.bigint "character_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["character_id"], name: "index_battle_logs_on_character_id"
+    t.index ["user_id"], name: "index_battle_logs_on_user_id"
+  end
+
+  create_table "characters", force: :cascade do |t|
+    t.string "name"
+    t.string "gender"
+    t.integer "exp", default: 0
+    t.integer "coin", default: 0
+    t.integer "lv", default: 1
+    t.integer "hp", default: 10
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_characters_on_user_id"
+  end
+
+  create_table "equipment", force: :cascade do |t|
+    t.string "name"
+    t.integer "rarity"
+    t.string "effect"
+    t.text "description"
+    t.integer "price"
+    t.string "img"
+    t.bigint "character_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["character_id"], name: "index_equipment_on_character_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.text "description"
+    t.text "options", default: [], array: true
+    t.string "answer"
+    t.string "img"
+    t.string "level"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +73,8 @@ ActiveRecord::Schema.define(version: 2019_08_20_015408) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "battle_logs", "characters"
+  add_foreign_key "battle_logs", "users"
+  add_foreign_key "characters", "users"
+  add_foreign_key "equipment", "characters"
 end
