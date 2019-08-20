@@ -10,6 +10,11 @@ class CharactersController < ApplicationController
   def create
     @character = Character.new(str_params)
     @character.user = current_user
+    if @character.save
+      redirect_to town_path
+    else
+      render :new
+    end
   end
 
   private
