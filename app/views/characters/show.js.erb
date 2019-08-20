@@ -1,3 +1,8 @@
-console.log("hi")
-const profile = document.getElementById('profile');
+console.log("Call the show.js.erb")
+var profile = document.getElementById('profile');
   profile.innerHTML = '<%= j render "characters/show", character: @character %>';
+
+var cls = document.getElementById('close');
+cls.addEventListener("click", function(){
+    profile.innerHTML = "";
+});
