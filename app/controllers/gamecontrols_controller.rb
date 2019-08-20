@@ -8,6 +8,9 @@ class GamecontrolsController < ApplicationController
     end
   end
 
+  def wild
+    @level = Level.find(params[:level])
+  end
   private
 
   def check_character

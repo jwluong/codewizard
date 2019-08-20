@@ -1,0 +1,4 @@
+<h1>Select a level</h1>
+<% @levels.each do |level| %>
+  <%= link_to level.name, wild_path(level:level) %>
+<% end %>
