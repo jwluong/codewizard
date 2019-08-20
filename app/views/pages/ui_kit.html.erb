@@ -10,32 +10,62 @@
 <h3>Fonts:</h3>
 <h4 class="press_start_2p" style="font-family:'Press Start 2P' ">Press Start 2P</h4>
 <h4 class="merriweather" style="font-family:'Merriweather' ">Merriweather</h4>
+<h4 class="merriweather" style="font-family:'Merriweather'; font-weight: bolder; ">Merriweather bolder</h4>
+<h4 class="merriweather" style="font-family:'Merriweather'; font-weight: lighter; ">Merriweather lighter</h4>
 <br>
 <h3>Colors:</h3>
-<div style="border: 1px solid  black; width: 300px;">
-  <div style="background-color: white; height: 100px; width: 300px;"><p>White</p></div>
-  <div style="background-color: #E20338; height: 100px; width: 300px;"><p>redish #E20338</p></div>
-  <div style="background-color: #0260E8; height: 100px; width: 300px;"><p>blueish  #0260E8</p></div>
+<div style="border: 1px solid  black; width: 300px; display: flex;">
+  <div style="background-color: white; height: 150px; width: 100px;"><p>White</p></div>
+  <div style="background-color: #E20338; height: 150px; width: 100px;"><p>redish #E20338</p></div>
+  <div style="background-color: #0260E8; height: 150px; width: 100px;"><p>blueish #0260E8</p></div>
 </div>
 <br>
-<h3>Buttons</h3>
+<h3>Buttons:</h3>
 <a href="#" style="color: white; padding: 10px; border-radius: 20px; background-color: #0260E8">Accept</a>
 <a href="#" style="color: white; padding: 10px; border-radius: 20px; background-color: #E20338">Cancel</a>
+<%= image_tag "btn_blue.png", alt: "blue_btn", style: "height: 50px; width: 100px;" %>
+<%= image_tag "btn_red.png", alt: "red_btn", style: "height: 50px; width: 100px;" %>
 <br>
 <br>
 <h3>Buttons hover</h3>
 <a href="#" class="btn btn-primary"></a>
 <a href="#" class="btn btn-warning"></a>
+<%= image_tag "btn_drkblue.png", alt: "drkblue_btn", style: "height: 50px; width: 100px;" %>
+<%= image_tag "btn_drkred.png", alt: "drkred_btn", style: "height: 50px; width: 100px;" %>
 <br>
+<br>
+<h3>Images:</h3>
+<div style="display: flex; ">
 <%= image_tag "town.jpg", alt: "Town", style: "height: 350px; width: 600px;" %>
+<h4>Town</h4>
+</div>
 <br>
-<%= image_tag "forest.png", alt: "forest", style: "height: 350px; width: 600px;" %>
+<div style="display: flex; ">
+<%= image_tag "forest.png", alt: "Forest", style: "height: 350px; width: 600px;" %>
+<h4>Forest</h4>
+</div>
 <br>
-<%= image_tag "desert.jpg", alt: "desert", style: "height: 350px; width: 600px;" %>
+<div style="display: flex; ">
+<%= image_tag "desert.jpg", alt: "Desert", style: "height: 350px; width: 600px;" %>
+<h4>Desert</h4>
+</div>
 <br>
-<%= image_tag "ice.jpg", alt: "ice", style: "height: 350px; width: 600px;" %>
+<div style="display: flex; ">
+<%= image_tag "ice.jpg", alt: "Ice", style: "height: 350px; width: 600px;" %>
+<h4>Ice</h4>
+</div>
 <br>
-<%= image_tag "shop.jpg", alt: "shop", style: "height: 350px; width: 600px;" %>
+<div style="display: flex; ">
+<%= image_tag "shop.jpg", alt: "Shop", style: "height: 350px; width: 600px;" %>
+<h4>Shop</h4>
+</div>
 <br>
+<div style="display: flex; ">
 <%= image_tag "score_board.jpg", alt: "score_board", style: "height: 350px; width: 600px;" %>
+<h4>Score board</h4>
+</div>
 <br>
+<br>
+<h3>Borders</h3>
+<div style="height: 300px; width: 300px; border: 5px solid white; border-image: repeating-linear-gradient( 45deg, black, black 1%, red 1%, red 8%) 10; "></div>
+
