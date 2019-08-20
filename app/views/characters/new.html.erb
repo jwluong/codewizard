@@ -1,0 +1,6 @@
+<h1>Create your character</h1>
+<%= simple_form_for(@character) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :gender, as: :radio_buttons, collection: [['female', 'female'], ['male', 'male']], label_method: :second, value_method: :first %>
+    <%= f.button :submit, "submit" %>
+<% end %>
