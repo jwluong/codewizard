@@ -1,0 +1,13 @@
+<div class="filter">
+  <div class="show-border">
+    <p style="text-align: right;"><%= link_to "close", close_profile_path %></p>
+    <h1>profile</h1>
+    <p>Name: <%= @character.name %></p>
+    <p>Gender: <%= @character.gender %></p>
+    <p>Exp: <%= @character.exp %></p>
+    <p>Coin: <%= @character.coin %></p>
+    <p>Lv.<%= @character.lv %></p>
+    <p>Hp:<%= @character.hp %>/</p>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+  </div>
+</div>
