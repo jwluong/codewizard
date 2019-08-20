@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_20_024641) do
+ActiveRecord::Schema.define(version: 2019_08_20_080102) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,14 +51,34 @@ ActiveRecord::Schema.define(version: 2019_08_20_024641) do
     t.index ["character_id"], name: "index_equipment_on_character_id"
   end
 
+  create_table "level_progresses", force: :cascade do |t|
+    t.bigint "character_id"
+    t.bigint "level_id"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["character_id"], name: "index_level_progresses_on_character_id"
+    t.index ["level_id"], name: "index_level_progresses_on_level_id"
+  end
+
+  create_table "levels", force: :cascade do |t|
+    t.string "name"
+    t.integer "number"
+    t.string "img"
+    t.string "track"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "questions", force: :cascade do |t|
     t.text "description"
     t.text "options", default: [], array: true
     t.string "answer"
     t.string "img"
-    t.string "level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "level_id"
+    t.index ["level_id"], name: "index_questions_on_level_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -77,4 +97,7 @@ ActiveRecord::Schema.define(version: 2019_08_20_024641) do
   add_foreign_key "battle_logs", "users"
   add_foreign_key "characters", "users"
   add_foreign_key "equipment", "characters"
+  add_foreign_key "level_progresses", "characters"
+  add_foreign_key "level_progresses", "levels"
+  add_foreign_key "questions", "levels"
 end
