@@ -1,1 +1,10 @@
 <h1>wild</h1>
+<% @level.questions.each do |question| %>
+  <p><%= question.description %></p>
+  <% question.options.each do |option| %>
+    <span><%= option %></span>
+  <% end %>
+
+<% end %>
+
+<%= link_to 'result', result_ path %>
