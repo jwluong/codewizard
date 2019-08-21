@@ -1,3 +1,9 @@
-<h1>Pages#home</h1>
-<%= link_to "Login", new_user_session_path, class: "nav-link" %>
-<%= link_to "Sign up", new_registration_path(@user) %><br />
+<div class="container landing vh-100 min-vw-100 d-flex justify-content-center">
+  <div class="info-box rounded border border-dark my-auto p-5">
+    <h1>Welcome to the world of Code Wizard!</h1>
+    <div class="register-buttons d-flex justify-content-center">
+      <%= link_to "Login", new_user_session_path, class: "m-3 px-4 btn btn-warning" %>
+      <%= link_to "Sign up", new_registration_path(@user), class: "m-3 btn btn-warning" %>
+    </div>
+  </div>
+</div>
