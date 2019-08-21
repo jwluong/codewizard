@@ -3,7 +3,7 @@
     <p id='close' style="text-align: right;cursor: pointer;">close</p>
     <h1>Select a level</h1>
     <% levels.each do |level| %>
-      <%= link_to level.name, wild_path(level:level) %>
+      <%= link_to level.name, level_path(level.questions[0]) %>
     <% end %>
   </div>
 </div>

@@ -12,12 +12,11 @@
 # Level.destroy_all
 # Character.destroy_all
 # User.destroy_all
-
+l = Level.create!(name: "test#{Level.all.length+1}", number: (Level.all.length+1),track:"mid")
 5.times do |num|
-  des = "This is No.#{num} very very very very very very very very very very long question"
+  des = "This is No.#{num+1} very very very very very very very very very very long question"
   op = ['1','2','3','4']
   ans = '4'
-  l = Level.last
   q = Question.create!(description: des, options: op, answer: ans, level: l)
 end
 
