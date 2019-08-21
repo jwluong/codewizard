@@ -1,4 +1,7 @@
-1) What is a method?
+
+
+Question.create(description: "What is a method?", options: ["A set of expressions that returns a value", "A container for storing data", "A way to test applications",
+  "A framework for creating applications")
 A set of expressions that returns a value
 
 2) What does a ! at end of a method name mean?
@@ -14,6 +17,7 @@ The method will permanently modify the value
 RandomInt
 
 -----------
+
 
 6) What is a variable?
 A variable is a "container" user to store values
