@@ -1,0 +1,9 @@
+<h2><%= question.description %></h2>
+<% question.options.each_with_index do |option, index| %>
+  <span id="option<%= index %>"><%= option %></span>
+<% end %>
+
+<%= simple_form_for(@battle_log, remote: true) do |f| %>
+    <%= f.input :user_answer %>
+    <%= f.submit "Submit" %>
+<% end %>

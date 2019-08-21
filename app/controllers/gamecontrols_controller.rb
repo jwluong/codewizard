@@ -8,6 +8,7 @@ class GamecontrolsController < ApplicationController
   def wild
     authorize :gamecontrol, :wild?
     @level = Level.find(params[:level])
+    @battle_log = BattleLog.new
   end
 
   private

@@ -5,3 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# Battle_log.destroy_all
+# Level_progress.destroy_all
+# Question.destroy_all
+# Level.destroy_all
+# Character.destroy_all
+# User.destroy_all
+
+5.times do |num|
+  des = "This is No.#{num} very very very very very very very very very very long question"
+  op = ['1','2','3','4']
+  ans = '4'
+  l = Level.last
+  q = Question.create!(description: des, options: op, answer: ans, level: l)
+end
+
+p 'run seed successfully'
