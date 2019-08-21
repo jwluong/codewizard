@@ -1,6 +1,7 @@
 class CharactersController < ApplicationController
   def show
     @character = current_user.characters[0]
+    authorize @character
     respond_to do |format|
       format.js # <-- will render `app/views/reviews/create.js.erb`
       format.html { render 'gamecontrols/town' }
