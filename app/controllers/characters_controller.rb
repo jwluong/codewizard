@@ -1,6 +1,7 @@
 class CharactersController < ApplicationController
   def show
     @character = current_user.characters[0]
+    authorize @character
     respond_to do |format|
       format.js # <-- will render `app/views/reviews/create.js.erb`
       format.html { render 'gamecontrols/town' }
@@ -9,10 +10,12 @@ class CharactersController < ApplicationController
 
   def new
     @character = Character.new
+    authorize @character
   end
 
   def create
     @character = Character.new(str_params)
+    authorize @character
     @character.user = current_user
     if @character.save
       redirect_to town_path
