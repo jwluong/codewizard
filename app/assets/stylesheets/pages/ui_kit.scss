@@ -1,0 +1,42 @@
+.module1 {
+  border: 30px solid;
+  border-image: asset-url("border.png") 25 25 round;
+  height: 200px;
+  width: 200px;
+}
+
+body {
+  padding: 20px;
+}
+
+.module {
+  width: 200px;
+  height: 200px;
+  background: white;
+  position: relative;
+  border: 1px solid black;
+  margin: 20px;
+  border-radius: 7px;
+}
+.module:after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: linear-gradient(180deg, rgba(217,191,158,1) 10%, rgba(151,96,23,1) 50%);
+  z-index: -1;
+  border-radius: 6px;
+}
+.module:before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  background: black;
+  z-index: -2;
+  border-radius: 7px;
+}

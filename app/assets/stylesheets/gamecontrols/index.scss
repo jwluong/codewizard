@@ -1,0 +1,76 @@
+ body, html {
+  height: 100%;
+}
+
+.town_body{
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  // display: flex;
+  // align-items: center;
+}
+
+.town_a {
+  padding:  20px;
+  background-color: $redish;
+  color: white;
+  font-family: "Press Start 2P";
+  border-radius: 20px;
+}
+.town_a_prof{
+  padding:  20px;
+  background-color: $redish;
+  color: white;
+  font-family: "Press Start 2P";
+  border-radius: 20px;
+}
+.town_a_shop{
+  padding:  20px;
+  background-color: $redish;
+  color: white;
+  font-family: "Press Start 2P";
+  border-radius: 20px;
+}
+
+// .sho_pro_link{
+//   display: flex;
+//   flex-direction: column;
+//   height: 60%;
+//   justify-content: space-between;
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+
+// }
+
+// .town_container {
+//   justify-content: center;
+//   // display: flex;
+//   // flex-direction: column;
+//   align-items: center;
+//   img {
+//     height: 150px;
+//     width:150px;
+//   }
+// }
+
+.town_flex {
+  height: inherit;
+  justify-content: space-between;
+}
+
+.town_pro {
+  justify-content: flex-end;
+}
+
+.town_mid {
+  justify-content: space-between;
+}
+
+.town_char {
+  justify-content: center;
+  img {
+    height: 130px;
+  }
+}
