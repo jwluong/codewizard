@@ -1,17 +1,24 @@
 <div class="filter">
-  <div class="show-border module">
-    <a class="close_lnk"><i id="close" class="fas fa-times close_btn"></i></a>
-    <h1 class="char_show_prof_h1">profile</h1>
-    <p>Name: <%= @character.name %></p>
-    <p>Gender: <%= @character.gender %></p>
-    <p>Exp: <%= @character.exp %></p>
-    <p>Coin: <%= @character.coin %></p>
-    <p>Lv.<%= @character.lv %></p>
-    <p>Hp:<%= @character.hp %>/</p>
-    <div class="char_logout">
-      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "m-3 px-4 btn btn-warning" %>
+  <div class="container  d-flex justify-content-center vh-100">
+  <div class="show-border nes-container is-rounded">
+    <a class="close_lnk"><i id="close" class="nes-icon close is-small close_btn "></i></a>
+    <div class="nes-container with-title is-rounded nes_prof">
+      <p class="title">Profile</p>
+
+      <p>Name: <%= @character.name %></p>
+      <p>Gender: <%= @character.gender %></p>
+      <p>Exp: <%= @character.exp %></p>
+      <p>Coin: <%= @character.coin %></p>
+      <p>Lv.<%= @character.lv %></p>
+      <p>Hp:<%= @character.hp %>/</p>
     </div>
-
-
+    <br>
+    <div class="nes-container with-title is-rounded">
+      <p class="title">Settings</p>
+      <div class="char_logout">
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nes-btn is-error" %>
+      </div>
+    </div>
+  </div>
   </div>
 </div>
