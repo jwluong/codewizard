@@ -1,20 +1,21 @@
 .levels-box {
   width: 100%;
-  color: white;
+  color: black;
   font-family: 'press start 2p';
-  background-color: rgba(200, 200, 200, 0.6);
+  background-color: white;
   h1 {
     font-family: 'press start 2p';
     font-size: 24px;
   }
-  a{
-    color:white;
-    &:hover{
-      text-decoration: none
-    }
-  }
+  // a{
+  //   color:white;
+  //   &:hover{
+  //     text-decoration: none
+  //   }
+  // }
 }
 
 .level-card {
-  width: 300px
+  width: 300px;
+  border-radius: 10px;
 }
