@@ -9,30 +9,31 @@ class BattleLogsController < ApplicationController
     @progress = @level.questions.index(@question)
     @character = current_user.characters[0]
     if user_answer == @question.answer
-      if @level.questions[@progress + 1]
+      # p @level.questions[@progress + 1]
+      if !@level.questions[@progress + 1].nil?
         # render 'questions/show', question: @level.questions[@progress + 1]
-        @status = 'next'
+      p  @status = "next"
 
       else
         # render 'gamecontrols/result'
-        @status = 'result'
+      p  @status = "result"
       end
     else
       if (@character.hp - 3) <= 0
         @character.hp = 10
         @character.save
 
-        @status = 'town'
+        @status = "town"
       else
         @character.hp -= 3
         @character.save
-        @status = 'stay'
+        @status = "stay"
         # render 'questions/show', question: @level.questions[@progress]
       end
     end
     respond_to do |format|
       # format.html { render 'questions/show' }
-      format.js # <-- will render `app/views/reviews/create.js.erb`
+      format.js  # <-- will render `app/views/reviews/create.js.erb`
     end
   end
 end
