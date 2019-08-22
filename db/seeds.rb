@@ -15,7 +15,18 @@ Level.create!(name: "OOP Advanced I", number: 11, track: "hard")
 Level.create!(name: "OOP Advanced II", number: 12, track: "hard")
 
 
-Level.all.each do |x|
+Question.create!(description: "What is a method?", options: ["A set of expressions that returns a value", "A container for storing data", "A way to test applications", "A framework for creating applications"], answer: "A set of expressions that returns a value", level: Level.first)
+
+Question.create!(description: "What does a ! at end of a method name mean?", options: ["It is an important method", "Nothing", "The method will permanently modify the value", "The method will return true or false"], answer: "The method will permanently modify the value", level: Level.first)
+
+Question.create!(description: "Which method converts an integer to a string?", options: [".to_s", ".to_string", "METHOD: STRING CONVERT", ".convert_to_s"], answer: ".to_s", level: Level.first)
+
+Question.create!(description: "How do you convert a string to an integer?", options: [".to_num", ".convert_to_int", ".to_int", ".to_i"], answer: ".to_i", level: Level.first)
+
+Question.create!(description: "Which is not a class?", options: ["Number", "Symbol", "String", "Boolean"], answer: "Number", level: Level.first)
+
+
+Level.all[1..12].each do |x|
   4.times do
     Question.create!(description: "Which is the correct answer?", options: ["a","b","c","d"], answer: "a", level: x)
   end
