@@ -1,12 +1,13 @@
-<div class="character-new d-flex align-items-center vh-100" style="background-image: url( <%= image_url "score_board.jpg" %>">
+<div class="character-new d-flex align-items-center vh-100" style="background-image: url( <%= image_url "char_create.jpg" %>">
   <div class="new-form container p-4 border">
     <div class="row justify-content-center">
-      <h1 style="font-family:'press start 2p'">Create your character</h1>
+      <h1 style="font-family:'press start 2p'; color: white">Create your character</h1>
     </div>
     <div class="row">
-      <div class="col border">
+      <div class="col border" style="
+    color: white;">
         <%= simple_form_for(@character) do |f| %>
-        <%= f.input :name %>
+        <%= f.input :name%>
         <%= f.input :gender, as: :radio_buttons, collection: [['female', 'female'], ['male', 'male']], label_method: :second, value_method: :first %>
         <%= f.button :submit, "submit", class: "btn btn-warning mx-auto" %>
         <% end %>
