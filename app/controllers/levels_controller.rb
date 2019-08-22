@@ -1,6 +1,6 @@
 class LevelsController < ApplicationController
   def index
-    @levels = policy_scope(Level).all
+    @levels = policy_scope(Level)
   end
 
   def show

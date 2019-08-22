@@ -1,12 +1,12 @@
-<h2><%= @question.description %></h2>
-<% @question.options.each_with_index do |option, index| %>
+<h2><%= question.description %></h2>
+<% question.options.each_with_index do |option, index| %>
   <span id="option<%= index %>"><%= option %></span>
 <% end %>
 
-  <%= simple_form_for(@battle_log) do |f| %>
-      <%= f.input :user_answer, as: :radio_buttons, collection: [[@question.options[0], @question.options[0]], [@question.options[1], @question.options[1]],[@question.options[2], @question.options[2]], [@question.options[3], @question.options[3]]], label_method: :second, value_method: :first %>
-      <%#= f.input :question, as: :hidden, input_html: { @question.id } %>
-      <%= hidden_field_tag 'question_id', @question.id %>
+  <%= simple_form_for @battle_log, remote: true do |f| %>
+      <%= f.input :user_answer, as: :radio_buttons, collection: [[question.options[0], question.options[0]], [question.options[1], question.options[1]],[question.options[2], question.options[2]], [question.options[3], question.options[3]]], label_method: :second, value_method: :first %>
+      <%#= f.input question, as: :hidden, input_html: { question.id } %>
+      <%= hidden_field_tag 'question_id', question.id %>
       <%= f.submit "Submit" %>
   <% end %>
 

@@ -3,29 +3,36 @@ class BattleLogsController < ApplicationController
 
   def update
     @battle_log = BattleLog.find(params[:id])
-    @question = @battle_log.question
+    @question = Question.find(params[:question_id])
     @level = @question.level
     user_answer = params[:battle_log][:user_answer]
     @progress = @level.questions.index(@question)
     @character = current_user.characters[0]
     if user_answer == @question.answer
       if @level.questions[@progress + 1]
-        render 'questions/show', question: @level.questions[@progress + 1]
-        raise
+        # render 'questions/show', question: @level.questions[@progress + 1]
+        @status = 'next'
+
       else
-        render 'gamecontrols/result'
+        # render 'gamecontrols/result'
+        @status = 'result'
       end
     else
       if (@character.hp - 3) <= 0
         @character.hp = 10
         @character.save
-        redirect_to town_path
+
+        @status = 'town'
       else
         @character.hp -= 3
         @character.save
-        render 'questions/show', question: @level.questions[@progress]
+        @status = 'stay'
+        # render 'questions/show', question: @level.questions[@progress]
       end
     end
-
+    respond_to do |format|
+      # format.html { render 'questions/show' }
+      format.js # <-- will render `app/views/reviews/create.js.erb`
+    end
   end
 end
