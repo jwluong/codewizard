@@ -3,10 +3,40 @@
   width:100%;
   background-color:rgba(0,0,0,0.4);
   position:absolute;
+  z-index: 0;
 }
 .show-border{
-  height: 500px;
-  width: 800px;
+  font-family: 'Press Start 2P';
+  height: 400px;
+  width:600px;
   background-color: white;
   margin:auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 25%;
+
+  p {
+    margin-left: 10px;
+  }
 }
+
+
+.close_btn {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.close_lnk {
+  text-align: right;
+}
+.char_show_prof_h1 {
+  text-align: center;
+  font-family: 'Press Start 2P';
+}
+ .char_logout {
+  text-align: center;
+
+ }
+
+
