@@ -1,0 +1,13 @@
+<div class="filter">
+  <div class="show-border">
+    <p id='close' style="text-align: right;cursor: pointer;">close</p>
+    <h1>Result</h1>
+    <p>Name: <%#= @character.name %></p>
+    <p>Gender: <%#= @character.gender %></p>
+    <p>Exp: <%#= @character.exp %></p>
+    <p>Coin: <%#= @character.coin %></p>
+    <p>Lv.<%#= @character.lv %></p>
+    <p>Hp:<%#= @character.hp %>/</p>
+    <%= link_to "Town", town_path %>
+  </div>
+</div>

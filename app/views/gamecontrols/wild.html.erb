@@ -1,9 +1,17 @@
 <h1>wild</h1>
-<% @level.questions.each do |question| %>
-  <p><%= question.description %></p>
-  <% question.options.each do |option| %>
-    <span><%= option %></span>
-  <% end %>
-<% end %>
+<%# @level.questions.each do |question| %>
+  <p><%#= question.description %></p>
+  <%# question.options.each do |option| %>
+    <span><%#= option %></span>
+  <%# end %>
+<%# end %>
 
 <%#= link_to 'result', result_ path %>
+
+<%= render 'questions/show', question:@level.questions.first %>
+
+<%# if @level.questions[n + 1] %>
+  <%# n += 1 %>
+<%# else %>
+  <%#= render result %>
+<%# end %>

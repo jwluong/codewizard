@@ -1,0 +1,8 @@
+console.log("Call the levels/index.js.erb")
+var level = document.getElementById('level');
+  level.innerHTML = '<%= j render "levels/index", levels: @levels %>';
+
+var cls = document.getElementById('close');
+cls.addEventListener("click", function(){
+    level.innerHTML = "";
+});
