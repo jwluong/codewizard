@@ -4,8 +4,7 @@
       <h1 style="font-family:'press start 2p'; color: white">Create your character</h1>
     </div>
     <div class="row">
-      <div class="col border" style="
-    color: white;">
+      <div class="col border" style="color: white;">
         <%= simple_form_for(@character) do |f| %>
         <%= f.input :name %>
         <%= f.input :gender, as: :radio_buttons, collection: [['female', 'female'], ['male', 'male']], label_method: :second, value_method: :first %>
