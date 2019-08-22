@@ -1,3 +1,4 @@
+<% unless question.nil? %>
 <h2><%= question.description %></h2>
 <% question.options.each_with_index do |option, index| %>
   <span id="option<%= index %>"><%= option %></span>
@@ -10,3 +11,4 @@
       <%= f.submit "Submit" %>
   <% end %>
 
+  <% end %>
