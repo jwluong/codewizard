@@ -10,33 +10,13 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  // display: flex;
-  // align-items: center;
+  a {
+    text-decoration: none;
+    &:hover {
+      color: black;
+    }
+  }
 }
-
-
-
-// .sho_pro_link{
-//   display: flex;
-//   flex-direction: column;
-//   height: 60%;
-//   justify-content: space-between;
-//   position: absolute;
-//   top: 0;
-//   right: 0;
-
-// }
-
-// .town_container {
-//   justify-content: center;
-//   // display: flex;
-//   // flex-direction: column;
-//   align-items: center;
-//   img {
-//     height: 150px;
-//     width:150px;
-//   }
-// }
 
 #adv_btn{
   height: 90px;
@@ -73,7 +53,7 @@
 .town_char {
   justify-content: center;
   img {
-    height: 130px;
+    height: 200px;
   }
 }
 
