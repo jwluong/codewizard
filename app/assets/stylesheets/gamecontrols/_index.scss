@@ -1,4 +1,5 @@
 @import "levels_index";
+@import "result";
 
  body, html {
   height: 100%;
@@ -13,27 +14,7 @@
   // align-items: center;
 }
 
-.town_a {
-  padding:  20px;
-  background-color: $redish;
-  color: white;
-  font-family: "Press Start 2P";
-  border-radius: 20px;
-}
-.town_a_prof{
-  padding:  20px;
-  background-color: $redish;
-  color: white;
-  font-family: "Press Start 2P";
-  border-radius: 20px;
-}
-.town_a_shop{
-  padding:  20px;
-  background-color: $redish;
-  color: white;
-  font-family: "Press Start 2P";
-  border-radius: 20px;
-}
+
 
 // .sho_pro_link{
 //   display: flex;
@@ -57,6 +38,25 @@
 //   }
 // }
 
+#adv_btn{
+  height: 90px;
+  width: 320px;
+  font-size: 25px;
+  z-index: 0;
+}
+
+#prof_btn{
+  height: 70px;
+  width: 150px;
+  font-size: 20px;
+}
+#shop_btn{
+  height: 70px;
+  width: 150px;
+  font-size: 20px;
+  margin-right: 20px;
+}
+
 .town_flex {
   height: inherit;
   justify-content: space-between;
@@ -67,7 +67,7 @@
 }
 
 .town_mid {
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .town_char {
@@ -75,4 +75,9 @@
   img {
     height: 130px;
   }
+}
+
+.town_btn {
+  margin-top: 20px;
+  margin-right: 20px;
 }

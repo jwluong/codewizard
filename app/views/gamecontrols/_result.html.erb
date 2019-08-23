@@ -1,13 +1,38 @@
-<div class="filter">
-  <div class="show-border">
-    <h1>Result</h1>
-    <p>Name: <%#= @character.name %></p>
-    <p>Gender: <%#= @character.gender %></p>
-    <p>Exp: <%#= @character.exp %></p>
-    <p>Coin: <%#= @character.coin %></p>
-    <p>Lv.<%#= @character.lv %></p>
-    <p>Hp:<%#= @character.hp %>/</p>
-    <%= link_to "Town", town_path %>
-    <%  %>
+<div>
+<div class="result_body" style="background-image: url( <%= image_url "score_board.jpg", alt: "score_board" %> )">
+  <div class="filter">
+    <div class="show-border nes-container is-rounded rslt_border">
+      <div class="nes-container with-title is-centered is-rounded rslt_prof">
+        <p class="title">Result</p>
+        <div class="rslt_info">
+        <div>
+          <p>Time: </p>
+          <p>Lv. </p>
+          <p>Exp: </p>
+          <p>Coin: </p>
+        </div>
+
+        <div class="rslt_rlinfo">
+          <div>
+          <p>01:23</p>
+          <p><%= @character.lv %></p>
+          <p><%= @character.exp %></p>
+          <p><%= @character.coin %></p>
+          </div>
+        </div>
+        </div>
+        <!-- <p>Name: <%= @character.name %></p>
+        <p>Gender: <%= @character.gender %></p>
+        <p>Exp: <%= @character.exp %></p>
+        <p>Coin: <%= @character.coin %></p>
+        <p>Lv.<%= @character.lv %></p>
+        <p>Hp:<%= @character.hp %>/</p> -->
+      </div>
+      <div class="rslt_btns">
+        <%= link_to "Town", town_path, class: "nes-btn is-warning rslt_btn"%>
+        <a href="#" class="nes-btn is-warning rslt_btn">Next</a>
+      </div>
+    </div>
   </div>
+</div>
 </div>

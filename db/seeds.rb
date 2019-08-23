@@ -1,3 +1,4 @@
+BattleLog.destroy_all
 Question.destroy_all
 Level.destroy_all
 
@@ -16,7 +17,7 @@ Level.create!(name: "OOP Advanced II", number: 12, track: "hard")
 
 
 Level.all.each do |x|
-  4.times do
+  1.times do
     Question.create!(description: "Which is the correct answer?", options: ["a","b","c","d"], answer: "a", level: x)
   end
 end

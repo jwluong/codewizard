@@ -1,0 +1,52 @@
+ body, html {
+  height: 100%;
+}
+.result_body {
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+ .filter {
+  display:  flex;
+  justify-content: center;
+  .show-border{
+    min-height: 50%;
+  }
+ }
+}
+
+.filter{
+  .show-border{
+
+    .rslt_prof {
+      text-align: left;
+    }
+
+    .rslt_btns {
+      margin-top: 30px;
+      align-self: center;
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+    }
+  }
+}
+
+.rslt_border {
+  display: flex;
+  flex-direction: column;
+}
+.x{
+  display:flex;
+  justify-content: space-evenly;
+
+}
+
+.rslt_info {
+  display: flex;
+  .rslt_rlinfo {
+   display: flex;
+   justify-content: center;
+   flex-grow: 1;
+  }
+}

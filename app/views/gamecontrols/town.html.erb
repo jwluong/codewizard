@@ -3,13 +3,18 @@
 <div class="town_body" style="background-image: url( <%= image_url "town.jpg", alt: "Town" %> )">
   <div class="d-flex  flex-column town_flex" >
     <div class="d-flex w-100 town_pro">
-      <%= link_to "profile", character_path(current_user.characters[0]), remote: true, class: "town_a_prof"  %>
-
+      <div class="town_btn">
+        <a href="#" class="town_a_shop"><button type="button" id="shop_btn" class="nes-btn is-primary">Shop</button></a>
+        <%= link_to character_path(current_user.characters[0]), remote: true, class: "town_a_prof" do %>
+          <button type="button" id="prof_btn" class="nes-btn is-primary town_prof">Profile</button>
+        <% end %>
+      </div>
     </div>
     <div class="d-flex w-100 town_mid">
       <div></div>
-      <%= link_to "begin adventure", levels_index_path, remote: true, class: "town_a" %>
-      <a href="#" class="town_a_shop">shop</a>
+      <%= link_to levels_index_path, remote: true, class: "town_a" do %>
+        <button type="button" id="adv_btn" class="nes-btn is-error">Begin Adventure</button>
+      <% end %>
     </div>
     <div  class="d-flex town_char">
       <%= image_tag "character.png", alt: "alttext" %>
