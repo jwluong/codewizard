@@ -1,3 +1,4 @@
+BattleLog.destroy_all
 Question.destroy_all
 Level.destroy_all
 

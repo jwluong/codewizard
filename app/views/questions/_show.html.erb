@@ -1,12 +1,12 @@
 <% if question.level.track == "easy" %>
-
-    <div class="container vh-100 min-vw-100" style="background-size: cover;background-image: url(<%= image_url "forest.png" %>)">
-  <% elsif question.level.track == "medium" %>
-    <div class="container vh-100 min-vw-100" style="background-size: cover;background-image: url(<%= image_url "desert.jpg" %>)">
-  <% else question.level.track == "hard" %>
-    <div class="container vh-100 min-vw-100" style="background-size: cover;background-image: url(<%= image_url "ice.jpg" %>)">
+  <div class="container vh-100 min-vw-100" style="background-size: cover;background-image: url(<%= image_url "forest.png" %>)">
+<% elsif question.level.track == "medium" %>
+  <div class="container vh-100 min-vw-100" style="background-size: cover;background-image: url(<%= image_url "desert.jpg" %>)">
+<% else question.level.track == "hard" %>
+  <div class="container vh-100 min-vw-100" style="background-size: cover;background-image: url(<%= image_url "ice.jpg" %>)">
 <% end %>
 
+<% unless question.nil? %>
   <div class="nes-container is-rounded bg-white">
     <p><%= question.description %></p>
     <%= simple_form_for @battle_log, remote: true do |f| %>
@@ -20,7 +20,4 @@
   <div class="character container d-flex justify-content-center", style="transform: scaleX(-1);position:relative; top:100px; right:200px">
     <%= image_tag("character.png", height: '200', width: '200') %>
   </div>
-</div>
-
-
-
+<% end %>
