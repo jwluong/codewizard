@@ -10,15 +10,15 @@ console.log(status)
 switch(status) {
   case "next":
     console.log("next");
-    show_area.innerHTML = '<%= j render "questions/show", question: @level.questions[@progress + 1] %>';
+    show_area.innerHTML = '<%= j render "questions/show", question: @level.questions[@progress + 1], addBackground: @addBackground %>';
     break;
   case "result":
     console.log("result");
-    show_area.innerHTML = '<%= j render "gamecontrols/result" %>';
+    show_area.innerHTML = '<%= j render "gamecontrols/result", addBackground: @addBackground %>';
     break;
   case "stay":
     console.log("stay");
-    show_area.innerHTML = '<%= j render "gamecontrols/hint" %>';
+    show_area.innerHTML = '<%= j render "gamecontrols/hint", addBackground: @addBackground %>';
     break;
   case "town":
     console.log("town");
