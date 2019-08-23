@@ -1,28 +1,34 @@
-<div class="container w-50 vh-100">
-  <div class="form">
-    <h2 class="text-center">Sign up</h2>
+<div class="landing vh-100 min-vw-100 d-flex justify-content-center align-items-center" style="background-image: url( <%= image_url "landing.jpg" %>">
+  <div class="nes-container is-rounded w-50 info-box">
+    <div class="form">
+      <h1 class="text-center">Sign up</h1>
 
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= f.error_notification %>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
 
-    <div class="form-inputs">
-      <%= f.input :email,
-      required: true,
-      autofocus: true,
-      input_html: { autocomplete: "email" }%>
-      <%= f.input :password,
-      required: true,
-      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-      input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_confirmation,
-      required: true,
-      input_html: { autocomplete: "new-password" } %>
-    </div>
-
-    <div class="d-flex justify-content-center form-actions">
-        <%= f.button :submit, "Sign up", class: "m-3 btn btn-warning"%>
+        <div class="form-inputs">
+          <%= f.input :email,
+          required: true,
+          autofocus: true,
+          defaults: { wrapper: false },
+          input_html: { id: "name_field", class: "nes-input" }%>
+          <%= f.input :password,
+          required: true,
+          hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+          defaults: { wrapper: false },
+          input_html: { id: "name_field", class: "nes-input" } %>
+          <%= f.input :password_confirmation,
+          required: true,
+          defaults: { wrapper: false },
+          input_html: { id: "name_field", class: "nes-input" } %>
+        </div>
+        <div class="d-flex justify-content-center form-actions">
+          <%= f.button :submit, "Sign up", class: "m-3 nes-btn is-warning"%>
+        </div>
       <% end %>
-      <%= render "devise/shared/links" %>
+      <div class="d-flex justify-content-center">
+        <%= render "devise/shared/links" %>
+      </div>
     </div>
   </div>
 </div>

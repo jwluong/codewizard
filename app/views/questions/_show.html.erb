@@ -1,14 +1,20 @@
-<% unless question.nil? %>
-<h2><%= question.description %></h2>
-<% question.options.each_with_index do |option, index| %>
-  <span id="option<%= index %>"><%= option %></span>
-<% end %>
+<div class="d-flex flex-column vh-100">
+  <div class="min-vw-100 h-75 flex-shrink-1" style="background-position: center 50%;background-size: cover;background-image: url(<%= image_url addBackground %>);">
+  </div>
 
-  <%= simple_form_for @battle_log, remote: true do |f| %>
-      <%= f.input :user_answer, as: :radio_buttons, collection: [[question.options[0], question.options[0]], [question.options[1], question.options[1]],[question.options[2], question.options[2]], [question.options[3], question.options[3]]], label_method: :second, value_method: :first %>
-      <%#= f.input question, as: :hidden, input_html: { question.id } %>
-      <%= hidden_field_tag 'question_id', question.id %>
-      <%= f.submit "Submit" %>
+  <% unless question.nil? %>
+    <div class="nes-container is-rounded bg-white flex-grow-1">
+      <p><%= question.description %></p>
+      <%= simple_form_for @battle_log, remote: true do |f| %>
+          <%= f.input :user_answer, as: :radio_buttons, collection: [[question.options[0], question.options[0]], [question.options[1], question.options[1]],[question.options[2], question.options[2]], [question.options[3], question.options[3]]], label_method: :second, value_method: :first, label: ''%>
+          <%#= f.input question, as: :hidden, input_html: { question.id } %>
+          <%= hidden_field_tag 'question_id', question.id %>
+          <%= f.submit "Submit", class: "nes-btn" %>
+      <% end %>
+    </div>
   <% end %>
+</div>
 
-  <% end %>
+<div class="character", style="transform: scaleX(-1);position:absolute; left: 400px;top:150px">
+  <%= image_tag("character.png", height: '200', width: '200') %>
+</div>
