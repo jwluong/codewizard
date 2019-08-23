@@ -1,7 +1,12 @@
-<div class="filter">
-  <div class="show-border">
-    <h1>you're dead</h1>
-    <h2>we'll kick you back to town</h2>
-    <%= link_to "OK", town_path %>
+<!-- dead display -->
+<div class="filter d-flex justify-content-center">
+  <div class="show-border nes-container is-rounded">
+    <div class="nes-container is-rounded with-title is-centered d-flex flex-column">
+      <p class="title">Game Over</p>
+      <h4 style="font-family: 'press start 2p'">Sorry, you were defeated!</h1>
+      <div class="p-2"><%= image_tag "grave.png", height: '150', width: '150' %></div>
+      <%= link_to "Try again", level_path(@level.questions[0]), class: "nes-btn is-warning m-2" %>
+      <%= link_to "Return to Town", town_path, class: "nes-btn m-2 " %>
+    </div>
   </div>
 </div>
