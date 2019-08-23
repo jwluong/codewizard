@@ -5,3 +5,12 @@
 .new-form {
   background-color: rgba(200, 200, 200, 0.6)
 }
+
+.row {
+  .character-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+}
+
