@@ -35,3 +35,31 @@
     color: #212529;
     box-shadow: 2px 2px, 4px 2px, 6px 2px, 8px 2px, 10px 2px, 12px 2px, 14px 2px, 16px 2px, 2px 4px, 16px 4px, 2px 6px, 16px 6px, 2px 8px, 16px 8px, 2px 10px, 16px 10px, 2px 12px, 16px 12px, 2px 14px, 16px 14px, 2px 16px, 4px 16px, 6px 16px, 8px 16px, 10px 16px, 12px 16px, 14px 16px, 16px 16px;
 }
+
+.instruction-1{
+  padding:50px;
+}
+
+.instruction-text{
+  width:40%;
+}
+
+.instruction-text-title{
+  font-family: "press start 2p";
+  font-size: 24px
+}
+
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:80px;
+}
+
+.footer-text{
+  color:white;
+  font-size:12px;
+}
+.footer-icon{
+  color:#8187f9;
+}
