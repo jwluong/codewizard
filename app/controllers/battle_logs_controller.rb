@@ -1,5 +1,6 @@
 class BattleLogsController < ApplicationController
   skip_after_action :verify_authorized
+  include ApplicationHelper
 
   def update
     @battle_log = BattleLog.find(params[:id])
@@ -8,6 +9,7 @@ class BattleLogsController < ApplicationController
     user_answer = params[:battle_log][:user_answer]
     @progress = @level.questions.index(@question)
     @character = current_user.characters[0]
+    setBackground(@question)
     if user_answer == @question.answer
       if !@level.questions[@progress + 1].nil?
         # render 'questions/show', question: @level.questions[@progress + 1]
