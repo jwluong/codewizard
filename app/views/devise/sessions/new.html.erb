@@ -1,24 +1,30 @@
-<div class="container w-50 vh-100">
-  <div class="form">
-  <h2 class="text-center">Log in</h2>
+<div class="landing vh-100 min-vw-100 d-flex justify-content-center align-items-center" style="background-image: url( <%= image_url "landing.jpg" %>">
+  <div class="nes-container is-rounded w-50 info-box">
+    <div class="form">
+    <h1 class="text-center">Log in</h1>
 
-  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="form-inputs">
-      <%= f.input :email,
-                  required: false,
-                  autofocus: true,
-                  input_html: { autocomplete: "email" } %>
-      <%= f.input :password,
-                  required: false,
-                  input_html: { autocomplete: "current-password" } %>
-      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-    </div>
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name))  do |f| %>
+      <div class="form-inputs">
+        <%= f.input :email,
+                    required: false,
+                    autofocus: true,
+                    defaults: { wrapper: false },
+                    input_html: { id: "name_field", class: "nes-input" }  %>
+        <%= f.input :password,
+                    required: false,
+                    defaults: { wrapper: false },
+                    input_html: { id: "name_field", class: "nes-input" } %>
+        <%= f.input :remember_me,
 
-    <div class="d-flex form-actions justify-content-center">
-      <%= f.button :submit, "Log in", class: "btn btn-success"%>
+                    input_html: { class: "nes-checkbox" }, as: :boolean if devise_mapping.rememberable? %>
+      </div>
+
+      <div class="d-flex form-actions justify-content-center">
+        <%= f.button :submit, "Log in", class: "nes-btn is-success"%>
+      </div>
+    <% end %>
+    <div class="d-flex justify-content-center align-items-center">
+      <%= render "devise/shared/links" %>
     </div>
-  <% end %>
-  <div class="d-flex justify-content-center">
-    <%= render "devise/shared/links" %>
   </div>
 </div>
