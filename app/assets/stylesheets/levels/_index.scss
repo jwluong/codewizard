@@ -6,3 +6,21 @@
   margin: 5px;
   margin-left: -10px;
 }
+
+.level-button{
+
+  display:flex;
+}
+
+.track{
+  margin:24px 0px !important;
+  background-size: cover;
+  background-position:50% 55%;
+}
+
+// testing code on track title easy, mod. and hard
+.level-title{
+  background-color: transparent !important;
+  background: linear-gradient(25deg, rgba(255,255,255,.8), rgba(255,255,255,0) 20%),linear-gradient(335deg, rgba(255,255,255,.8), rgba(255,255,255,0) 20%);
+  background: radial-gradient(ellipse at top, #FFFFFF, transparent);
+}
