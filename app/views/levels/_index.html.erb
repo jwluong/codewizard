@@ -2,14 +2,14 @@
   <div class="container d-flex align-items-center vh-100">
     <div class="nes-container is-rounded levels-box">
       <div class="nes-container is-rounded levels-box p-3">
-      <i id='close' class="nes-icon close is-small" style="float: right;"></i>
+      <a><i id='close' class="nes-icon close is-small" style="float: right;"></i></a>
       <h1 class="text-center">Select a level</h1>
 
       <div class="nes-container is-rounded with-title d-flex p-0 m-4">
         <p class="title">Easy</p>
         <% @levels.each do |level| %>
           <% if level.track == "easy" %>
-              <%= link_to level.name, level_path(level.questions[0]), class: "level-card m-2 btn btn-secondary" %>
+              <%= link_to level.name, level_path(level.questions[0]), class: "level-card m-2 nes-btn is-primary" %>
           <% end %>
         <% end %>
       </div>
@@ -18,7 +18,7 @@
         <p class="title">Med.</p>
         <% @levels.each do |level| %>
           <% if level.track == "medium" %>
-              <%= link_to level.name, level_path(level.questions[0]), class: "level-card m-2 btn btn-secondary" %>
+              <%= link_to level.name, level_path(level.questions[0]), class: "level-card m-2 nes-btn is-primary" %>
           <% end %>
         <% end %>
       </div>
@@ -27,7 +27,7 @@
         <p class="title">Hard</p>
         <% @levels.each do |level| %>
           <% if level.track == "hard" %>
-              <%= link_to level.name, level_path(level.questions[0]), class: "level-card m-2 btn btn-secondary" %>
+              <%= link_to level.name, level_path(level.questions[0]), class: "level-card m-2 nes-btn is-primary" %>
           <% end %>
         <% end %>
       </div>
