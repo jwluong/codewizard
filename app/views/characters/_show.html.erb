@@ -1,16 +1,42 @@
-<div class="filter">
-  <div class="container  d-flex justify-content-center vh-100">
+<div class="filter town_pro_fil">
+  <div class="container show_cont">
   <div class="show-border nes-container is-rounded">
     <a class="close_lnk"><i id="close" class="nes-icon close is-small close_btn "></i></a>
     <div class="nes-container with-title is-rounded nes_prof">
       <p class="title">Profile</p>
 
-      <p>Name: <%= @character.name %></p>
+
+      <div class="town_pro_info">
+        <div>
+          <p>Name: </p>
+          <p>Gender: </p>
+          <br>
+          <p>LV. </p>
+          <p>HP: </p>
+          <p>EXP: </p>
+          <p>Coin: </p>
+        </div>
+
+        <div class="town_pro_rlinfo">
+          <div>
+            <p><%= @character.name %></p>
+            <p><%= @character.gender %></p>
+            <br>
+            <p><%= @character.lv %></p>
+            <p><%= @character.hp %></p>
+            <p><%= @character.exp %></p>
+            <p><%= @character.coin %></p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- <p>Name: <%= @character.name %></p>
       <p>Gender: <%= @character.gender %></p>
-      <p>Exp: <%= @character.exp %></p>
-      <p>Coin: <%= @character.coin %></p>
       <p>Lv.<%= @character.lv %></p>
       <p>Hp:<%= @character.hp %>/</p>
+      <p>Exp: <%= @character.exp %></p>
+      <p>Coin: <%= @character.coin %></p> -->
     </div>
     <br>
     <div class="nes-container with-title is-rounded">
