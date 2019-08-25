@@ -7,7 +7,7 @@
 }
 .show-border{
   font-family: 'Press Start 2P';
-  height: 400px;
+  height: 500px;
   width:600px;
   background-color: white;
   margin:auto;
@@ -51,4 +51,9 @@
 
 .nes-container.is-rounded {
  margin: 0px auto;
+}
+
+.profile-close{
+  top: -7px;
+  right: -14px;
 }

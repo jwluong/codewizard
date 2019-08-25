@@ -14,7 +14,7 @@ switch(status) {
     break;
   case "result":
     console.log("result");
-    show_area.innerHTML = '<%= j render "gamecontrols/result", addBackground: @addBackground %>';
+    result.innerHTML = '<%= j render "gamecontrols/result", addBackground: @addBackground %>';
     break;
   case "stay":
     console.log("stay");
@@ -22,7 +22,7 @@ switch(status) {
     break;
   case "town":
     console.log("town");
-    show_area.innerHTML = '<%= j render "gamecontrols/hint", level: @level, addBackground: @addBackground %>';
+    result.innerHTML = '<%= j render "gamecontrols/hint", level: @level, addBackground: @addBackground %>';
     break;
 }
 

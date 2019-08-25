@@ -9,9 +9,7 @@
  .filter {
   display:  flex;
   justify-content: center;
-  .show-border{
-    min-height: 50%;
-  }
+
  }
 }
 
@@ -35,6 +33,7 @@
 .rslt_border {
   display: flex;
   flex-direction: column;
+  text-align:center;
 }
 .x{
   display:flex;
@@ -49,4 +48,9 @@
    justify-content: center;
    flex-grow: 1;
   }
+}
+
+.result-title{
+  font-family:'press start 2p';
+  text-align:center;
 }

@@ -1,3 +1,12 @@
-<div id="show_area">
-  <%= render 'questions/show', question: @question, addBackground: @addBackground %>
+<div id="result"></div>
+<div class="battle-scene">
+  <div class="battle-background" style="background-image: url(<%= image_url @addBackground %>);">
+  </div>
+
+  <div class="question-area nes-container is-rounded">
+    <div id="show_area">
+      <%= render 'questions/show', question: @question, addBackground: @addBackground %>
+    </div>
+  </div>
 </div>
+

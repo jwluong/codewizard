@@ -1,12 +1,16 @@
 <!-- dead display -->
-<div class="filter d-flex justify-content-center">
-  <div class="show-border nes-container is-rounded">
-    <div class="nes-container is-rounded with-title is-centered d-flex flex-column">
-      <p class="title">Game Over</p>
-      <h4 style="font-family: 'press start 2p'">Sorry, you were defeated!</h1>
-      <div class="p-2"><%= image_tag "grave.png", height: '150', width: '150' %></div>
-      <%= link_to "Try again", level_path(@level.questions[0]), class: "nes-btn is-warning m-2" %>
-      <%= link_to "Return to Town", town_path, class: "nes-btn m-2 " %>
+<div class="abs">
+  <div class="filter d-flex justify-content-center">
+    <div class="show-border nes-container is-rounded">
+      <div class="nes-container is-rounded with-title is-centered">
+        <p class="title">Game Over</p>
+        <h4 style="font-family: 'press start 2p'">Sorry, you were defeated!</h1>
+        <div class="p-2"><%= image_tag "grave.png", height: '150', width: '150' %></div>
+    </div>
+    <div class="hint-button-block">
+        <%= link_to "Try again", level_path(@level.questions[0]), class: "nes-btn is-warning hint-button" %>
+        <%= link_to "Return to Town", town_path, class: "nes-btn hint-button " %>
+      </div>
     </div>
   </div>
 </div>
