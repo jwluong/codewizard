@@ -22,51 +22,10 @@ var show = (object) => {
   console.log(object.style.visibility);
 }
 
-var hurt = (object) => {
-  console.log("in hurt");
-  setTimeout(disappear, 1000, object);
-  setTimeout(show, 1000, object);
-}
-//Promise///////////////////////////////////////////////////////////
-var firstMethod = (object) => {
-   var promise = new Promise(function(resolve, reject){
-      setTimeout(() => {
-        console.log('first method completed');
-        console.log(object);
-        resolve(object);
-        disappear(object);
-      }, 200);
-   });
-   return promise;
-};
-
-
-var secondMethod = function(object) {
-   var promise = new Promise(function(resolve, reject){
-      setTimeout(show, 200, object);
-      resolve(object);
-   });
-   return promise;
-};
-
 var stayhere = () => {
     show_area.innerHTML = '<%= j render "questions/show", question: @level.questions[@progress], addBackground: @addBackground %>';
 };
 
-var thirdMethod = function(object) {
-   var promise = new Promise(function(resolve, reject){
-      setTimeout(stayhere, 200);
-   });
-   return promise;
-};
-
-  // firstMethod(chara)
-  //    .then(secondMethod);
-     // .then(thirdMethod);
-  // text += cars[i] + "<br>";
-
-
-/////////////////////////////////////////////////////////////
 
 //delay+promise///////////////////////////////////////////////////////////
 var delay = (ms) => new Promise(
@@ -116,8 +75,12 @@ switch(status) {
 
     // show_area.innerHTML = '<%= j render "questions/show", question: @level.questions[@progress], addBackground: @addBackground %>';
     delay(1)
-    .then(() => { hurt(chara); return delay(700);})
-    .then(() => { stayhere(); return delay(1); });
+    .then(() => {
+      hurt(chara);
+      return delay(700);
+    }).then(() => {
+      stayhere();
+      return delay(1); });
     break;
   case "town":
     console.log("town");
@@ -125,21 +88,3 @@ switch(status) {
     break;
 }
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   setInterval(refresh, 1000); // Every 1 second, the `refresh` function is called.
-// });
-
-// if (status === "next") {
-//   console.log("next");
-//   question.innerHTML = '<%#= j render "questions/show", question: @level.questions[@progress + 1] %>';
-// }
-// else if (status === "result") {
-//   console.log("result");
-//   question.innerHTML = '<%#= j render "gamecontrols/result" %>';
-// }
-// else if (status === "stay") {
-//   console.log("stay");
-// }
-// else if (status === "town") {
-//   console.log("town");
-// }
