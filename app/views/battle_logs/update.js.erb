@@ -2,9 +2,104 @@ console.log('calling update.js.erb')
 
 var show_area = document.getElementById('show_area');
 var result = document.getElementById('result');
+var chara = document.getElementById('chara');
+
 console.log(show_area)
 var status = "<%= @status %>";
-console.log(status)
+console.log(status);
+console.log(chara);
+console.log(chara.style);
+
+var disappear = (object) => {
+  console.log("in disappear");
+  object.style.visibility = "hidden";
+  console.log(object.style.visibility);
+}
+
+var show = (object) => {
+  console.log("in show");
+  object.style.visibility = "visible";
+  console.log(object.style.visibility);
+}
+
+var hurt = (object) => {
+  console.log("in hurt");
+  setTimeout(disappear, 1000, object);
+  setTimeout(show, 1000, object);
+}
+//Promise///////////////////////////////////////////////////////////
+var firstMethod = (object) => {
+   var promise = new Promise(function(resolve, reject){
+      setTimeout(() => {
+        console.log('first method completed');
+        console.log(object);
+        resolve(object);
+        disappear(object);
+      }, 200);
+   });
+   return promise;
+};
+
+
+var secondMethod = function(object) {
+   var promise = new Promise(function(resolve, reject){
+      setTimeout(show, 200, object);
+      resolve(object);
+   });
+   return promise;
+};
+
+var stayhere = () => {
+    show_area.innerHTML = '<%= j render "questions/show", question: @level.questions[@progress], addBackground: @addBackground %>';
+};
+
+var thirdMethod = function(object) {
+   var promise = new Promise(function(resolve, reject){
+      setTimeout(stayhere, 200);
+   });
+   return promise;
+};
+
+  // firstMethod(chara)
+  //    .then(secondMethod);
+     // .then(thirdMethod);
+  // text += cars[i] + "<br>";
+
+
+/////////////////////////////////////////////////////////////
+
+//delay+promise///////////////////////////////////////////////////////////
+var delay = (ms) => new Promise(
+  (resolve) => setTimeout(resolve, ms)
+);
+
+var hurt = (object) => {
+  var delay_time = 100;
+  delay(1)
+    .then(() => {
+      disappear(object);
+      return delay(delay_time);
+    })
+    .then(() => {
+      show(object);
+      return delay(delay_time);
+    }).then(() => {
+      disappear(object);
+      return delay(delay_time);
+    })
+    .then(() => {
+      show(object);
+      return delay(delay_time);
+    }).then(() => {
+      disappear(object);
+      return delay(delay_time);
+    })
+    .then(() => {
+      show(object);
+      return delay(delay_time);
+    });
+};
+/////////////////////////////////////////////////////////////
 
 
 switch(status) {
@@ -18,7 +113,11 @@ switch(status) {
     break;
   case "stay":
     console.log("stay");
-    show_area.innerHTML = '<%= j render "questions/show", question: @level.questions[@progress], addBackground: @addBackground %>';
+
+    // show_area.innerHTML = '<%= j render "questions/show", question: @level.questions[@progress], addBackground: @addBackground %>';
+    delay(1)
+    .then(() => { hurt(chara); return delay(700);})
+    .then(() => { stayhere(); return delay(1); });
     break;
   case "town":
     console.log("town");
@@ -26,6 +125,9 @@ switch(status) {
     break;
 }
 
+// document.addEventListener("DOMContentLoaded", () => {
+//   setInterval(refresh, 1000); // Every 1 second, the `refresh` function is called.
+// });
 
 // if (status === "next") {
 //   console.log("next");
