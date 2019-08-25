@@ -19,6 +19,20 @@
   }
 }
 
+.town_pro_fil{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.town_pro_info{
+  display: flex;
+  .town_pro_rlinfo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
 #adv_btn{
   height: 90px;
   width: 320px;

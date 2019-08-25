@@ -15,7 +15,8 @@
   flex-direction: column;
   position: relative;
   top: 25%;
-  min-height: 63%;
+  min-height: 0%;
+  // max-height: 65%;
 
   p {
     margin-left: 10px;
@@ -53,6 +54,11 @@
  margin: 0px auto;
 }
 
+.show_cont{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 .profile-close{
   top: -7px;
   right: -14px;
