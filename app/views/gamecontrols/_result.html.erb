@@ -2,6 +2,9 @@
 <div class="result_body" style="background-image: url( <%= image_url "score_board.jpg", alt: "score_board" %> )">
   <div class="filter">
     <div class="show-border nes-container is-rounded rslt_border">
+      <h2 class="result-title">Congratulations!</h2>
+      <p>You've done an excellent job in</p>
+      <p> <%= @level.name %>!</p>
       <div class="nes-container with-title is-centered is-rounded rslt_prof">
         <p class="title">Result</p>
         <div class="rslt_info">
@@ -22,9 +25,11 @@
         </div>
         </div>
       </div>
-      <div class="rslt_btns">
+      <div class="hint-button-block">
         <%= link_to "Town", town_path, class: "nes-btn rslt_btn"%>
-        <a href="#" class="nes-btn rslt_btn">Next</a>
+        <% if @level != Level.last %>
+          <%= link_to "Next", level_path(Level.find(@level.id + 1).questions[0]), class: "nes-btn is-warning hint-button" %>
+        <% end %>
       </div>
     </div>
   </div>

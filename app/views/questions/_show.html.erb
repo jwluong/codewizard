@@ -1,9 +1,5 @@
-<div class="d-flex flex-column vh-100">
-  <div class="min-vw-100 h-75 flex-shrink-1" style="background-position: center 50%;background-size: cover;background-image: url(<%= image_url addBackground %>);">
-  </div>
 
   <% unless question.nil? %>
-    <div class="nes-container is-rounded bg-white flex-grow-1">
       <p><%= question.description %></p>
       <%= simple_form_for @battle_log, remote: true do |f| %>
           <%= f.input :user_answer, as: :radio_buttons, collection: [[question.options[0], question.options[0]], [question.options[1], question.options[1]],[question.options[2], question.options[2]], [question.options[3], question.options[3]]], label_method: :second, value_method: :first, label: ''%>
@@ -11,10 +7,22 @@
           <%= hidden_field_tag 'question_id', question.id %>
           <%= f.submit "Submit", class: "nes-btn" %>
       <% end %>
-    </div>
+  <% end %>
+
+
+<div class="character", style="transform: scaleX(-1);position:absolute; left: 400px;top:-330px">
+  <%= image_tag("character.png", height: '200', width: '131') %>
+</div>
+<!-- This block is only for demo, need to rewrite after implement the experience system -->
+<div style="position:absolute; left: 400px;top:-385px;width:190px;">
+  <% hp = current_user.characters[0].hp %>
+  <span style="text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black; color:white;">hp: <%= hp %>/10</span></br>
+  <% if hp > 5 %>
+    <progress class="nes-progress is-success" value="<%= hp*10 %>" max="100" style="height:15px;"></progress>
+  <% elsif hp > 3 %>
+    <progress class="nes-progress is-warning" value="<%= hp*10 %>" max="100" style="height:15px;"></progress>
+  <% else %>
+    <progress class="nes-progress is-error" value="<%= hp*10 %>" max="100" style="height:15px;"></progress>
   <% end %>
 </div>
-
-<div class="character", style="transform: scaleX(-1);position:absolute; left: 400px;top:150px">
-  <%= image_tag("character.png", height: '200', width: '200') %>
-</div>
+<!-- end here -->
