@@ -3,6 +3,7 @@ console.log('calling update.js.erb')
 var show_area = document.getElementById('show_area');
 var result = document.getElementById('result');
 var chara = document.getElementById('chara');
+var char_status = document.getElementById('status');
 
 console.log(show_area)
 var status = "<%= @status %>";
@@ -26,7 +27,11 @@ var stayhere = () => {
     show_area.innerHTML = '<%= j render "questions/show", question: @level.questions[@progress], addBackground: @addBackground %>';
 };
 
-
+var update_status = () => {
+  console.log("in the update method");
+  console.log(char_status);
+    char_status.innerHTML = '<%= j render "characters/status" %>';
+};
 //delay+promise///////////////////////////////////////////////////////////
 var delay = (ms) => new Promise(
   (resolve) => setTimeout(resolve, ms)
@@ -80,6 +85,9 @@ switch(status) {
       return delay(700);
     }).then(() => {
       stayhere();
+      return delay(1);
+    }).then(() => {
+      update_status();
       return delay(1); });
     break;
   case "town":
