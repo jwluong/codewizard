@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'levels/index'
   devise_for :users
   authenticated :user do
     root 'gamecontrols#town'
@@ -10,9 +9,13 @@ Rails.application.routes.draw do
   get '/wild', to: "gamecontrols#wild"
   get '/result', to: "gamecontrols#result"
   get '/close_profile', to: "gamecontrols#close_profile"
-  resources :characters, only: [:show, :new, :create]
+  resources :characters, only: [:show, :new, :create] do
+    member do
+      post 'add_equipment', to: "characters#add_equipment"
+    end
+  end
   resources :questions, only: [:show]
-  resources :levels, only: [:show]
+  resources :levels, only: [:index, :show]
   resources :battle_logs, only: [:create, :update]
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :equipments, only: [:index, :create, :new]
 end

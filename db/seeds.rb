@@ -33,4 +33,7 @@ Level.all[1..12].each do |x|
   end
 end
 
+Item.create!(name: "armor", description: "Adds 2 health", effect: 2, price: "200", img: "armor.png")
+Item.create!(name: "helmet", description: "Adds 1 health", effect: 2, price: "200", img: "helmet.png")
+
 puts "Complete!"

@@ -24,6 +24,11 @@ class CharactersController < ApplicationController
     end
   end
 
+  def add_equipment
+    @character = Character.find(params[:id])
+    character.equipments << equipment
+  end
+
   private
 
   def str_params

@@ -4,7 +4,9 @@
   <div class="d-flex  flex-column town_flex" >
     <div class="d-flex w-100 town_pro">
       <div class="town_btn">
-        <!-- <a href="#" class="town_a_shop"><button type="button" id="shop_btn" class="nes-btn is-primary">Shop</button></a> -->
+        <%= link_to equipments_path, remote: true, class: "town_a_shop" do %>
+          <button type="button" id="shop_btn" class="nes-btn is-primary town_shop">Shop</button>
+        <% end %>
         <%= link_to character_path(current_user.characters[0]), remote: true, class: "town_a_prof" do %>
           <button type="button" id="prof_btn" class="nes-btn is-primary town_prof">Profile</button>
         <% end %>
@@ -12,7 +14,7 @@
     </div>
     <div class="d-flex w-100 town_mid">
       <div></div>
-      <%= link_to levels_index_path, remote: true, class: "town_a" do %>
+      <%= link_to levels_path, remote: true, class: "town_a" do %>
         <button type="button" id="adv_btn" class="nes-btn is-error">Begin Adventure</button>
       <% end %>
     </div>
