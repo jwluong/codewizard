@@ -15,6 +15,7 @@
           <p>HP: </p>
           <p>EXP: </p>
           <p>Coin: </p>
+          <p>Items: </p>
         </div>
 
         <div class="town_pro_rlinfo">
@@ -26,17 +27,13 @@
             <p><%= @character.hp %></p>
             <p><%= @character.exp %></p>
             <p><%= @character.coin %></p>
+            <% @character.items.each do |item| %>
+              <p><%= item.name %></p>
+            <% end %>
           </div>
         </div>
 
       </div>
-
-      <!-- <p>Name: <%= @character.name %></p>
-      <p>Gender: <%= @character.gender %></p>
-      <p>Lv.<%= @character.lv %></p>
-      <p>Hp:<%= @character.hp %>/</p>
-      <p>Exp: <%= @character.exp %></p>
-      <p>Coin: <%= @character.coin %></p> -->
     </div>
     <br>
     <div class="nes-container with-title is-rounded">

@@ -1,6 +1,7 @@
 BattleLog.destroy_all
 Question.destroy_all
 Level.destroy_all
+Item.destroy_all
 
 Level.create!(name: "Ruby Basics I", number: 1, track: "easy")
 Level.create!(name: "Ruby Basics II", number: 2, track: "easy")
@@ -32,5 +33,8 @@ Level.all[1..12].each do |x|
     Question.create!(description: "Which is the correct answer?", options: ["a","b","c","d"], answer: "a", level: x)
   end
 end
+
+Item.create!(name: "Emerald Pendant", description: "Adds 1 health", effect: 1, price: "50", img: "pendant1.png")
+Item.create!(name: "Ruby Necklace", description: "Adds 2 health", effect: 2, price: "100", img: "pendant2.png")
 
 puts "Complete!"

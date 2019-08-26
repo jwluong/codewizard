@@ -1,0 +1,32 @@
+<div class="filter town_pro_fil">
+  <div class="container show_cont">
+  <div class="show-border nes-container is-rounded w-75 h-100">
+    <a class="close_lnk"><i id="close" class="nes-icon close is-small close_btn profile-close"></i></a>
+      <h4 class="text-center" style="font-family:'press start 2p'">Shop</h4>
+      <div class="d-flex item-cards">
+
+        <% @items.each do |item| %>
+          <div class=" nes-container is-rounded m-4 ">
+            <div class="d-flex justify-content-center">
+              <%= image_tag "#{item.img}", class: "w-50" %>
+            </div>
+            <p class="text-center mb-0 mt-2"><u><%= item.name %></u></p>
+            <div class="text-center">
+              • <%= item.description %>
+              <br>
+              • <%= item.price %> coins
+            </div>
+            <% if current_user.characters[0].enoughCoins? %>
+
+              <%= link_to "Purchase", add_item_character_path(current_user.characters[0], item: item), method: :post, class: "d-flex justify-content-center nes-btn is-warning" %>
+            <% else %>
+              <button type="button" class="nes-btn is-disabled">Not enough coins</button>
+            <% end %>
+          </div>
+        <% end %>
+
+      </div>
+
+  </div>
+</div>
+
