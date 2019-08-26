@@ -1,0 +1,8 @@
+console.log("Call the show.js.erb")
+var profile = document.getElementById('profile');
+  profile.innerHTML = '<%= j render "equipments/index" %>';
+
+var cls = document.getElementById('close');
+cls.addEventListener("click", function(){
+    profile.innerHTML = "";
+});

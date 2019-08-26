@@ -1,0 +1,27 @@
+<div class="filter town_pro_fil">
+  <div class="container show_cont">
+  <div class="show-border nes-container is-rounded w-75 h-100">
+    <a class="close_lnk"><i id="close" class="nes-icon close is-small close_btn profile-close"></i></a>
+      <h4 class="text-center" style="font-family:'press start 2p'">Shop</h4>
+      <div class="d-flex item-cards">
+
+        <% @equipments.each do |item| %>
+        <%= link_to "add equipment", add_equipment_character_path(current_user.character, equipment: item), method: :post %>
+            <div class=" nes-container is-rounded m-4 ">
+              <div class="d-flex justify-content-center">
+                <%= image_tag "#{item.img}", class: "w-50" %>
+              </div>
+              <p class="text-center mb-0 mt-2"><u><%= item.name.capitalize %></u></p>
+              <div class="text-center">
+                • <%= item.effect %>
+                <br>
+                • <%= item.price %> coins
+              </div>
+            </div>
+        <% end %>
+
+      </div>
+
+  </div>
+</div>
+
