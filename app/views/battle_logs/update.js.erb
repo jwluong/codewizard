@@ -2,9 +2,63 @@ console.log('calling update.js.erb')
 
 var show_area = document.getElementById('show_area');
 var result = document.getElementById('result');
+var chara = document.getElementById('chara');
+
 console.log(show_area)
 var status = "<%= @status %>";
-console.log(status)
+console.log(status);
+console.log(chara);
+console.log(chara.style);
+
+var disappear = (object) => {
+  console.log("in disappear");
+  object.style.visibility = "hidden";
+  console.log(object.style.visibility);
+}
+
+var show = (object) => {
+  console.log("in show");
+  object.style.visibility = "visible";
+  console.log(object.style.visibility);
+}
+
+var stayhere = () => {
+    show_area.innerHTML = '<%= j render "questions/show", question: @level.questions[@progress], addBackground: @addBackground %>';
+};
+
+
+//delay+promise///////////////////////////////////////////////////////////
+var delay = (ms) => new Promise(
+  (resolve) => setTimeout(resolve, ms)
+);
+
+var hurt = (object) => {
+  var delay_time = 100;
+  delay(1)
+    .then(() => {
+      disappear(object);
+      return delay(delay_time);
+    })
+    .then(() => {
+      show(object);
+      return delay(delay_time);
+    }).then(() => {
+      disappear(object);
+      return delay(delay_time);
+    })
+    .then(() => {
+      show(object);
+      return delay(delay_time);
+    }).then(() => {
+      disappear(object);
+      return delay(delay_time);
+    })
+    .then(() => {
+      show(object);
+      return delay(delay_time);
+    });
+};
+/////////////////////////////////////////////////////////////
 
 
 switch(status) {
@@ -18,7 +72,15 @@ switch(status) {
     break;
   case "stay":
     console.log("stay");
-    show_area.innerHTML = '<%= j render "questions/show", question: @level.questions[@progress], addBackground: @addBackground %>';
+
+    // show_area.innerHTML = '<%= j render "questions/show", question: @level.questions[@progress], addBackground: @addBackground %>';
+    delay(1)
+    .then(() => {
+      hurt(chara);
+      return delay(700);
+    }).then(() => {
+      stayhere();
+      return delay(1); });
     break;
   case "town":
     console.log("town");
@@ -26,18 +88,3 @@ switch(status) {
     break;
 }
 
-
-// if (status === "next") {
-//   console.log("next");
-//   question.innerHTML = '<%#= j render "questions/show", question: @level.questions[@progress + 1] %>';
-// }
-// else if (status === "result") {
-//   console.log("result");
-//   question.innerHTML = '<%#= j render "gamecontrols/result" %>';
-// }
-// else if (status === "stay") {
-//   console.log("stay");
-// }
-// else if (status === "town") {
-//   console.log("town");
-// }
