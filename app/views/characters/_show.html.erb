@@ -15,6 +15,7 @@
           <p>HP: </p>
           <p>EXP: </p>
           <p>Coin: </p>
+          <p>Items: </p>
         </div>
 
         <div class="town_pro_rlinfo">
@@ -26,6 +27,9 @@
             <p><%= @character.hp %></p>
             <p><%= @character.exp %></p>
             <p><%= @character.coin %></p>
+            <% @character.items.each do |item| %>
+              <p><%= item.name %></p>
+            <% end %>
           </div>
         </div>
 

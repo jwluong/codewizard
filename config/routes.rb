@@ -11,11 +11,11 @@ Rails.application.routes.draw do
   get '/close_profile', to: "gamecontrols#close_profile"
   resources :characters, only: [:show, :new, :create] do
     member do
-      post 'add_equipment', to: "characters#add_equipment"
+      post 'add_item', to: "characters#add_item"
     end
   end
   resources :questions, only: [:show]
   resources :levels, only: [:index, :show]
   resources :battle_logs, only: [:create, :update]
-  resources :equipments, only: [:index, :create, :new]
+  resources :items, only: [:index, :create, :new]
 end

@@ -12,4 +12,8 @@ class CharacterPolicy < ApplicationPolicy
   def create?
     true
   end
+
+  def add_item?
+    true
+  end
 end

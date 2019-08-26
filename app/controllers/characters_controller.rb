@@ -24,9 +24,14 @@ class CharactersController < ApplicationController
     end
   end
 
-  def add_equipment
+  def add_item
     @character = Character.find(params[:id])
-    character.equipments << equipment
+    authorize @character
+    item = Item.find(params[:item])
+    @character.items << item
+    @character.hp += item.effect
+    @character.coin -= item.price
+    @character.save
   end
 
   private

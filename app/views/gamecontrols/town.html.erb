@@ -4,7 +4,7 @@
   <div class="d-flex  flex-column town_flex" >
     <div class="d-flex w-100 town_pro">
       <div class="town_btn">
-        <%= link_to equipments_path, remote: true, class: "town_a_shop" do %>
+        <%= link_to items_path, remote: true, class: "town_a_shop" do %>
           <button type="button" id="shop_btn" class="nes-btn is-primary town_shop">Shop</button>
         <% end %>
         <%= link_to character_path(current_user.characters[0]), remote: true, class: "town_a_prof" do %>
