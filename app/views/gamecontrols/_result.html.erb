@@ -1,4 +1,4 @@
-<div>
+
 <div class="result_body" style="background-image: url( <%= image_url "score_board.jpg", alt: "score_board" %> )">
   <div class="filter">
     <div class="show-border nes-container is-rounded rslt_border">
@@ -10,8 +10,8 @@
         <div class="rslt_info">
         <div>
           <p>Time: </p>
-          <p>Lv. </p>
-          <p>Exp: </p>
+          <p>Lv.</p>
+          <p>Exp:  </p>
           <p>Coin: </p>
         </div>
 
@@ -19,8 +19,8 @@
           <div>
           <p>01:23</p>
           <p><%= @character.lv %></p>
-          <p><%= @character.exp %></p>
-          <p><%= @character.coin %></p>
+          <p>+<%= @level.questions.length %></p>
+          <p>+<%= @level.questions.length * 10 %></p>
           </div>
         </div>
         </div>
@@ -33,5 +33,4 @@
       </div>
     </div>
   </div>
-</div>
 </div>

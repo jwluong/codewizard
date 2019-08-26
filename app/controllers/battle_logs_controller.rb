@@ -11,18 +11,20 @@ class BattleLogsController < ApplicationController
     @character = current_user.characters[0]
     setBackground(@question)
     if user_answer == @question.answer
+      gain_exp_coin
       if !@level.questions[@progress + 1].nil?
         # render 'questions/show', question: @level.questions[@progress + 1]
+        @character.save
         @status = "next"
       else
         # render 'gamecontrols/result'
-        @character.hp = 10
+        @character.hp = @character.lv + 9
         @character.save
         @status = "result"
       end
     else
       if (@character.hp - 3) <= 0
-        @character.hp = 10
+        @character.hp = @character.lv + 9
         @character.save
         @status = "town"
       else
@@ -35,6 +37,17 @@ class BattleLogsController < ApplicationController
     respond_to do |format|
       # format.html { render 'questions/show' }
       format.js # <-- will render `app/views/reviews/create.js.erb`
+    end
+  end
+
+  private
+
+  def gain_exp_coin
+    @character.exp += 1
+    @character.coin += 10
+    if @character.exp >= @character.lv * 5
+      @character.lv += 1
+      @character.exp -= (@character.lv - 1) * 5
     end
   end
 end
