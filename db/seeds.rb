@@ -5,7 +5,7 @@ Item.destroy_all
 
 # DELETE BEFORE FINAL DEMO DAY
 test = Character.first
-test.coin = 90
+test.coin = 100000
 test.save
 #
 
