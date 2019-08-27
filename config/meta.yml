@@ -1,0 +1,6 @@
+meta_product_name: "Code Wizard"
+meta_title: "Code Wizard - Polish your coding knowledge"
+meta_description: "Adventure into the world of Code Wizard, defeat monsters and polish your coding knowledge!"
+meta_image: "title_1200x630.png" # should exist in `app/assets/images/`
+twitter_account: "@YujiDragneel"   # required for Twitter Cards
+# @YujiDragneel
