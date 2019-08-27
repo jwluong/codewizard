@@ -12,9 +12,9 @@
       <% if hp_ratio > 50 %>
         <progress class="nes-progress is-success hp-bar" value="<%= hp_ratio %>" max="100"></progress>
       <% elsif hp_ratio > 30 %>
-        <progress class="nes-progress is-warning" value="<%= hp_ratio %>" max="100" style="height:15px; margin-bottom: 14px;"></progress>
+        <progress class="nes-progress is-warning hp-bar" value="<%= hp_ratio %>" max="100" style="height:15px; margin-bottom: 14px;"></progress>
       <% else %>
-        <progress class="nes-progress is-error" value="<%= hp_ratio %>" max="100" style="height:15px; margin-bottom: 14px;"></progress>
+        <progress class="nes-progress is-error hp-bar" value="<%= hp_ratio %>" max="100" style="height:15px; margin-bottom: 14px;"></progress>
       <% end %></br>
       <span class="black-border-text status-content">Exp: <%= exp %>/<%= lv  * 5 %></span>
       <progress class="nes-progress is-primary exp-bar" value="<%= exp * 20 / lv %>" max="100"></progress>

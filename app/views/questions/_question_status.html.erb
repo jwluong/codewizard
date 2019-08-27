@@ -1,0 +1,12 @@
+<% question_ratio = (@level.questions.length - progress) * 100 / @level.questions.length %>
+<% p progress %>
+<% p @level.questions.length %>
+<% p question_ratio %>
+
+<% if question_ratio > 50 %>
+  <progress class="nes-progress is-success hp-bar" value="<%= question_ratio %>" max="100"></progress>
+<% elsif question_ratio > 30 %>
+  <progress class="nes-progress is-warning hp-bar" value="<%= question_ratio %>" max="100" style="height:15px; margin-bottom: 14px;"></progress>
+<% else %>
+  <progress class="nes-progress is-error hp-bar" value="<%= question_ratio %>" max="100" style="height:15px; margin-bottom: 14px;"></progress>
+<% end %></br>

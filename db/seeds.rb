@@ -48,7 +48,7 @@ Question.create!(description: "Which method splits a string into an array of str
 
 Question.create!(description: "Which method can tell if an integer is odd?", options: [".checkIfOdd", ".odd", ".isOdd?", ".odd?"], answer: ".odd?", level: Level.all[1])
 
-Question.create!(description: "What does a ? at the end of a method name mean?", options: ["The method is unclear", "There is an unknown variable", "The method is a placeholder", "The method returns true or false"], answer: "Number", level: Level.all[1])
+Question.create!(description: "What does a ? at the end of a method name mean?", options: ["The method is unclear", "There is an unknown variable", "The method is a placeholder", "The method returns true or false"], answer: "The method returns true or false", level: Level.all[1])
 
 # Flow & Arrays
 Question.create!(description: "What class will '14'.to_i return?", options: ["String", "Boolean", "Symbol", "Integer"], answer: "Integer", level: Level.all[2])

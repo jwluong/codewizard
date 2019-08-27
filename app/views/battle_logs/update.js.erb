@@ -5,12 +5,14 @@ var result = document.getElementById('result');
 var character_avatar = document.getElementById('character_avatar');
 var monster = document.getElementById('monster');
 var char_status = document.getElementById('status');
+var mon_status = document.getElementById('question_status');
 var attack = document.getElementById('attack');
 
 // console.log(show_area)
 var status = "<%= @status %>";
 // console.log(status);
-// console.log(character_avatar);
+console.log(character_avatar);
+console.log(monster.id);
 // console.log(character_avatar.style);
 
 
@@ -22,10 +24,58 @@ var stayhere = () => {
     show_area.innerHTML = '<%= j render "questions/show", question: @level.questions[@progress], addBackground: @addBackground %>';
 };
 
+var next_level = () => {
+  result.innerHTML = '<%= j render "gamecontrols/hint", level: @level, addBackground: @addBackground %>';
+};
+
+var game_result = () => {
+  result.innerHTML = '<%= j render "gamecontrols/result", addBackground: @addBackground %>';
+};
+
+//change gif///////////////////////////////////////////////////////////
+var attack_position = () => {
+  console.log(character_avatar)
+  character_avatar.src = '<%= image_url ("avatar/#{current_user.characters[0].gender}_attc.gif") %>';
+};
+
+var mon_attack_position = () => {
+  monster.src = '<%= image_url ("avatar/bandit1_attc.gif") %>';
+};
+
+var back_normal = () => {
+  character_avatar.src = '<%= image_url ("avatar/#{current_user.characters[0].gender}.gif") %>';
+};
+
+var mon_back_normal = () => {
+  monster.src = '<%= image_url ("avatar/bandit1.gif") %>';
+};
+
+var dead = () => {
+  delay(1)
+    .then(() => {
+      character_avatar.src = '<%= image_url ("avatar/#{current_user.characters[0].gender}_dead.gif") %>';
+      return delay(700);
+    }).then(() => {
+      character_avatar.src = '<%= image_url ("avatar/#{current_user.characters[0].gender}_rip.png") %>';
+      return delay(1);
+    });
+};
+
+var mon_dead = () => {
+  delay(1)
+    .then(() => {
+      monster.src = '<%= image_url ("avatar/bandit1_dead.gif") %>';
+      return delay(910);
+    }).then(() => {
+      monster.src = '<%= image_url ("avatar/bandit1_rip.png") %>';
+      return delay(1);
+    });
+};
+//normal attack///////////////////////////////////////////////////////////
 var set_attack = () =>{
   attack.style.visibility = "visible";
-  attack.style.top = character_avatar.x + 45  + 'px';
-  attack.style.left = character_avatar.y + 243 + 'px';
+  attack.style.top = character_avatar.y + 143  + 'px';
+  attack.style.left = character_avatar.x + 156 + 'px';
 };
 
 var set_mon_attack = () =>{
@@ -67,10 +117,13 @@ var mon_attack = (attack_img) => {
 //update character mini status///////////////////////////////////////////////////////////
 var update_status = () => {
   console.log("in the update method");
-  console.log(char_status);
-    char_status.innerHTML = '<%= j render "characters/status" %>';
+  // console.log(char_status);
+  char_status.innerHTML = '<%= j render "characters/status" %>';
+  mon_status.innerHTML = '<%= j render "questions/question_status", progress: @progress+1 %>';
 };
 
+var update_mon_status = () => {
+};
 //delay+promise///////////////////////////////////////////////////////////
 var delay = (ms) => new Promise(
   (resolve) => setTimeout(resolve, ms)
@@ -124,9 +177,11 @@ switch(status) {
     console.log("next");
     delay(1)
     .then(() => {
-      set_attack();
-      return delay(1);
+      attack_position();
+      return delay(1650);
     }).then(() => {
+      back_normal();
+      set_attack();
       char_attack(attack);
       return delay(600);
     }).then(() => {
@@ -135,31 +190,43 @@ switch(status) {
       return delay(700);
     }).then(() => {
       next_question();
-      return delay(1)
-      .then(() => {
       update_status();
-      return delay(1); });
+      return delay(1);
     });
-    // set_attack(attack);
-    // console.log(character_avatar.x);
-    // console.log(character_avatar.y);
-    // console.log(monster.x);
-    // console.log(monster.y);
     break;
   case "result":
     console.log("result");
-    result.innerHTML = '<%= j render "gamecontrols/result", addBackground: @addBackground %>';
+    delay(1)
+    .then(() => {
+      attack_position();
+      return delay(1650);
+    }).then(() => {
+      back_normal();
+      set_attack();
+      char_attack(attack);
+      return delay(600);
+    }).then(() => {
+      finish_attack();
+      mon_dead();
+      return delay(700);
+    }).then(() => {
+      game_result();
+      update_status();
+      return delay(1);
+    });
     break;
-  case "stay":
+  case "stay":    // attack_position();
     console.log("stay");
     console.log(monster.x);
     console.log(monster.y);
     // show_area.innerHTML = '<%= j render "questions/show", question: @level.questions[@progress], addBackground: @addBackground %>';
     delay(1)
     .then(() => {
-      set_mon_attack();
-      return delay(1);
+      mon_attack_position();
+      return delay(520);
     }).then(() => {
+      mon_back_normal();
+      set_mon_attack();
       mon_attack(attack);
       return delay(600);
     }).then(() => {
@@ -168,15 +235,31 @@ switch(status) {
       return delay(700);
     }).then(() => {
       stayhere();
-      return delay(1);
-    }).then(() => {
       update_status();
       return delay(1);
     });
     break;
   case "town":
     console.log("town");
-    result.innerHTML = '<%= j render "gamecontrols/hint", level: @level, addBackground: @addBackground %>';
+    delay(1)
+    .then(() => {
+      mon_attack_position();
+      return delay(520);
+    }).then(() => {
+      mon_back_normal();
+      set_mon_attack();
+      mon_attack(attack);
+      return delay(600);
+    }).then(() => {
+      finish_attack();
+      dead(character_avatar);
+      return delay(700);
+    }).then(() => {
+      next_level();
+      update_status();
+      return delay(1);
+    });
+
     break;
 }
 

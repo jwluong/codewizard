@@ -4,6 +4,9 @@
 </div>
 <div class="battle-scene">
   <div class="battle-background" style="background-image: url(<%= image_url @addBackground %>);">
+    <div id="question_status">
+      <%= render 'questions/question_status', progress: @progress %>
+    </div>
     <div class="battle-field">
     <%= image_tag "avatar/#{current_user.characters[0].gender}.gif", alt: "alttext", id: "character_avatar" %>
     <%= image_tag "avatar/bandit1.gif", alt: "alttext", id: "monster" %>
