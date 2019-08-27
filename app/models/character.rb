@@ -10,7 +10,7 @@ class Character < ApplicationRecord
   end
 
   def maxHealth
-    health = 9 + self.lv * 1
+    health = 9 + self.lv
     self.items.each do |item|
       health += item.effect
     end
