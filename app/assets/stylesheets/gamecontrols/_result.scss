@@ -9,6 +9,7 @@
  .filter {
   display:  flex;
   justify-content: center;
+  align-items:  center;
 
  }
 }
@@ -30,11 +31,21 @@
   }
 }
 
+.result_body{
+  .filter {
+    .rslt_border{
+      padding-top: 2px;
+    }
+  }
+}
+
+
 .rslt_border {
   display: flex;
   flex-direction: column;
   text-align:center;
 }
+
 .x{
   display:flex;
   justify-content: space-evenly;
@@ -43,6 +54,7 @@
 
 .rslt_info {
   display: flex;
+  text-align: center;
   .rslt_rlinfo {
    display: flex;
    justify-content: center;
@@ -50,6 +62,9 @@
   }
 }
 
+.coin_gif{
+  height: 30px;
+}
 .result-title{
   font-family:'press start 2p';
   text-align:center;
