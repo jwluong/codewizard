@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   has_and_belongs_to_many :characters
-
+  
    def alreadyEquipped?
     equippedItems = []
 
@@ -9,4 +9,5 @@ class Item < ApplicationRecord
     end
     equippedItems.include? (self.name)
   end
+  
 end

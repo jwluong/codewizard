@@ -4,6 +4,7 @@ var show_area = document.getElementById('show_area');
 var result = document.getElementById('result');
 var chara = document.getElementById('chara');
 var char_status = document.getElementById('status');
+var fire = document.getElementById('fire');
 
 console.log(show_area)
 var status = "<%= @status %>";
@@ -23,6 +24,10 @@ var show = (object) => {
   console.log(object.style.visibility);
 }
 
+var next_question = () => {
+  show_area.innerHTML = '<%= j render "questions/show", question: @level.questions[@progress + 1], addBackground: @addBackground %>';
+};
+
 var stayhere = () => {
     show_area.innerHTML = '<%= j render "questions/show", question: @level.questions[@progress], addBackground: @addBackground %>';
 };
@@ -31,6 +36,20 @@ var update_status = () => {
   console.log("in the update method");
   console.log(char_status);
     char_status.innerHTML = '<%= j render "characters/status" %>';
+};
+
+var char_attack = (attack_img) => {
+  var id = setInterval(frame, 10);
+  var pos = 0;
+    function frame() {
+      if (pos == 350) {
+        clearInterval(id);
+      } else {
+        pos += 5;
+        attack_img.style.top = pos + 'px';
+        attack_img.style.left = pos + 'px';
+      }
+    }
 };
 //delay+promise///////////////////////////////////////////////////////////
 var delay = (ms) => new Promise(
@@ -69,7 +88,15 @@ var hurt = (object) => {
 switch(status) {
   case "next":
     console.log("next");
-    show_area.innerHTML = '<%= j render "questions/show", question: @level.questions[@progress + 1], addBackground: @addBackground %>';
+    delay(1)
+    .then(() => {
+      char_attack(fire);
+      return delay(700);
+    }).then(() => {
+      next_question();
+      return delay(1);
+    })
+
     break;
   case "result":
     console.log("result");
