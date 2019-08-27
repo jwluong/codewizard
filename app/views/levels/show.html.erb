@@ -4,7 +4,11 @@
 </div>
 <div class="battle-scene">
   <div class="battle-background" style="background-image: url(<%= image_url @addBackground %>);">
-    <%= image_tag "fireball.png", alt: "alttext", id: "fire" %>
+    <div class="battle-field">
+    <%= image_tag "avatar/#{current_user.characters[0].gender}.gif", alt: "alttext", id: "character_avatar" %>
+    <%= image_tag "avatar/bandit1.gif", alt: "alttext", id: "monster" %>
+    <%= image_tag "fireball.png", alt: "attack" ,id: "attack"%>
+    </div>
   </div>
 
   <div class="question-area nes-container is-rounded">
