@@ -3,6 +3,12 @@ Question.destroy_all
 Level.destroy_all
 Item.destroy_all
 
+# DELETE BEFORE FINAL DEMO DAY
+test = Character.first
+test.coin = 90
+test.save
+#
+
 Level.create!(name: "Ruby Basics I", number: 1, track: "easy")
 Level.create!(name: "Ruby Basics II", number: 2, track: "easy")
 Level.create!(name: "Flow & Arrays", number: 3, track: "easy")
