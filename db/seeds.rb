@@ -1,3 +1,4 @@
+Item.destroy_all
 BattleLog.destroy_all
 Question.destroy_all
 Level.destroy_all
@@ -158,6 +159,12 @@ Question.create!(description: "What does OOP stand for?", options: ["Oatmeal Oat
 Question.create!(description: "How do you set a getter and a setter in one line?", options: ["attr_owner", "attr_reader_writer", "attr_accessor", "attr_editor"], answer: "attr_accessor", level: Level.all[8])
 
 Question.create!(description: "What is a getter?", options: ["An instance method to read values", "An instance method to write values", "A class method to read variables", "A class method to write variables"], answer: "An instance method to read values", level: Level.all[8])
+
+Level.all[9..11].each do |x|
+  4.times do
+    Question.create!(description: "Which is the correct answer?", options: ["a","b","c","d"], answer: "a", level: x)
+  end
+end
 
 Item.create!(name: "Emerald Pendant", description: "Adds 1 health", effect: 1, price: "50", img: "pendant1.png")
 Item.create!(name: "Ruby Necklace", description: "Adds 2 health", effect: 2, price: "100", img: "pendant2.png")
