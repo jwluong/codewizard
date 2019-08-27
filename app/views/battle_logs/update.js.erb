@@ -2,16 +2,81 @@ console.log('calling update.js.erb')
 
 var show_area = document.getElementById('show_area');
 var result = document.getElementById('result');
-var chara = document.getElementById('chara');
+var character_avatar = document.getElementById('character_avatar');
+var monster = document.getElementById('monster');
 var char_status = document.getElementById('status');
-var fire = document.getElementById('fire');
+var attack = document.getElementById('attack');
 
-console.log(show_area)
+// console.log(show_area)
 var status = "<%= @status %>";
-console.log(status);
-console.log(chara);
-console.log(chara.style);
+// console.log(status);
+// console.log(character_avatar);
+// console.log(character_avatar.style);
 
+
+var next_question = () => {
+  show_area.innerHTML = '<%= j render "questions/show", question: @level.questions[@progress + 1], addBackground: @addBackground %>';
+};
+
+var stayhere = () => {
+    show_area.innerHTML = '<%= j render "questions/show", question: @level.questions[@progress], addBackground: @addBackground %>';
+};
+
+var set_attack = () =>{
+  attack.style.visibility = "visible";
+  attack.style.top = character_avatar.x + 45  + 'px';
+  attack.style.left = character_avatar.y + 243 + 'px';
+};
+
+var set_mon_attack = () =>{
+  attack.style.visibility = "visible";
+  attack.style.transform = 'rotate(180deg)';
+  attack.style.top = monster.y +100 + 'px';
+  attack.style.left = monster.x  + 'px';
+};
+
+var finish_attack = () =>{
+  attack.style.visibility = "hidden";
+};
+
+var char_attack = (attack_img) => {
+  var id = setInterval(frame, 1);
+  var pos = character_avatar.x + 105;
+    function frame() {
+      if (pos > monster.x) {
+        clearInterval(id);
+      } else {
+        pos += 5;
+        attack_img.style.left = pos + 'px';
+      }
+    }
+};
+
+var mon_attack = (attack_img) => {
+  var id = setInterval(frame, 1);
+  var pos = monster.x + 105;
+    function frame() {
+      if (pos < character_avatar.x+70) {
+        clearInterval(id);
+      } else {
+        pos -= 5;
+        attack_img.style.left = pos + 'px';
+      }
+    }
+};
+//update character mini status///////////////////////////////////////////////////////////
+var update_status = () => {
+  console.log("in the update method");
+  console.log(char_status);
+    char_status.innerHTML = '<%= j render "characters/status" %>';
+};
+
+//delay+promise///////////////////////////////////////////////////////////
+var delay = (ms) => new Promise(
+  (resolve) => setTimeout(resolve, ms)
+);
+
+//hurt effect///////////////////////////////////////////////////////////
 var disappear = (object) => {
   console.log("in disappear");
   object.style.visibility = "hidden";
@@ -23,38 +88,6 @@ var show = (object) => {
   object.style.visibility = "visible";
   console.log(object.style.visibility);
 }
-
-var next_question = () => {
-  show_area.innerHTML = '<%= j render "questions/show", question: @level.questions[@progress + 1], addBackground: @addBackground %>';
-};
-
-var stayhere = () => {
-    show_area.innerHTML = '<%= j render "questions/show", question: @level.questions[@progress], addBackground: @addBackground %>';
-};
-
-var update_status = () => {
-  console.log("in the update method");
-  console.log(char_status);
-    char_status.innerHTML = '<%= j render "characters/status" %>';
-};
-
-var char_attack = (attack_img) => {
-  var id = setInterval(frame, 10);
-  var pos = 0;
-    function frame() {
-      if (pos == 350) {
-        clearInterval(id);
-      } else {
-        pos += 5;
-        attack_img.style.top = pos + 'px';
-        attack_img.style.left = pos + 'px';
-      }
-    }
-};
-//delay+promise///////////////////////////////////////////////////////////
-var delay = (ms) => new Promise(
-  (resolve) => setTimeout(resolve, ms)
-);
 
 var hurt = (object) => {
   var delay_time = 100;
@@ -85,18 +118,33 @@ var hurt = (object) => {
 /////////////////////////////////////////////////////////////
 
 
+//choosing logic///////////////////////////////////////////////////////////
 switch(status) {
   case "next":
     console.log("next");
     delay(1)
     .then(() => {
-      char_attack(fire);
+      set_attack();
+      return delay(1);
+    }).then(() => {
+      char_attack(attack);
+      return delay(600);
+    }).then(() => {
+      finish_attack();
+      hurt(monster);
       return delay(700);
     }).then(() => {
       next_question();
-      return delay(1);
-    })
-
+      return delay(1)
+      .then(() => {
+      update_status();
+      return delay(1); });
+    });
+    // set_attack(attack);
+    // console.log(character_avatar.x);
+    // console.log(character_avatar.y);
+    // console.log(monster.x);
+    // console.log(monster.y);
     break;
   case "result":
     console.log("result");
@@ -104,18 +152,27 @@ switch(status) {
     break;
   case "stay":
     console.log("stay");
-
+    console.log(monster.x);
+    console.log(monster.y);
     // show_area.innerHTML = '<%= j render "questions/show", question: @level.questions[@progress], addBackground: @addBackground %>';
     delay(1)
     .then(() => {
-      hurt(chara);
+      set_mon_attack();
+      return delay(1);
+    }).then(() => {
+      mon_attack(attack);
+      return delay(600);
+    }).then(() => {
+      finish_attack();
+      hurt(character_avatar);
       return delay(700);
     }).then(() => {
       stayhere();
       return delay(1);
     }).then(() => {
       update_status();
-      return delay(1); });
+      return delay(1);
+    });
     break;
   case "town":
     console.log("town");

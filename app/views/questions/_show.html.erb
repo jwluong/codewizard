@@ -10,19 +10,19 @@
   <% end %>
 
 
-<div class="character" id="chara" style="transform: scaleX(-1);position:absolute; left: 400px;top:-330px">
-  <%= image_tag("character.png", height: '200', width: '131') %>
-</div>
+<!-- <div class="character" id="chara" style="transform: scaleX(-1);position:absolute; left: 400px;top:-330px">
+  <%#= image_tag("character.png", height: '200', width: '131') %>
+</div> -->
 <!-- This block is only for demo, need to rewrite after implement the experience system -->
-<div style="position:absolute; left: 400px;top:-385px;width:190px;">
-  <% hp = current_user.characters[0].hp %>
-  <span class="black-border-text">hp: <%= hp %>/10</span></br>
-  <% if hp > 5 %>
-    <progress class="nes-progress is-success" value="<%= hp*10 %>" max="100" style="height:15px;"></progress>
-  <% elsif hp > 3 %>
-    <progress class="nes-progress is-warning" value="<%= hp*10 %>" max="100" style="height:15px;"></progress>
-  <% else %>
-    <progress class="nes-progress is-error" value="<%= hp*10 %>" max="100" style="height:15px;"></progress>
-  <% end %>
-</div>
+<!-- <div style="position:absolute; left: 400px;top:-385px;width:190px;">
+  <%# hp = current_user.characters[0].hp %>
+  <span class="black-border-text">hp: <%#= hp %>/10</span></br>
+  <%# if hp > 5 %>
+    <progress class="nes-progress is-success" value="<%#= hp*10 %>" max="100" style="height:15px;"></progress>
+  <%# elsif hp > 3 %>
+    <progress class="nes-progress is-warning" value="<%#= hp*10 %>" max="100" style="height:15px;"></progress>
+  <%# else %>
+    <progress class="nes-progress is-error" value="<%#= hp*10 %>" max="100" style="height:15px;"></progress>
+  <%# end %>
+</div> -->
 <!-- end here -->
