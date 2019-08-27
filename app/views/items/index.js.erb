@@ -1,0 +1,15 @@
+console.log("Call the show.js.erb")
+var profile = document.getElementById('profile');
+  profile.innerHTML = '<%= j render "items/index" %>';
+
+var cls = document.getElementById('close');
+cls.addEventListener("click", function(){
+    profile.innerHTML = "";
+});
+
+document.querySelectorAll(".purchase-btn").forEach((btn) => {
+  btn.addEventListener('click', function() {
+    ('#exampleModal').modal('show')
+    // profile.innerHTML = "";
+  });
+});
