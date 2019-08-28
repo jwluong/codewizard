@@ -5,11 +5,20 @@
         <%= f.input_field :user_answer, as: :radio_buttons, collection: [[question.options[0], question.options[0]], [question.options[1], question.options[1]],[question.options[2], question.options[2]], [question.options[3], question.options[3]]], label_method: :second, value_method: :first, label: '', class: "custom-radio"%>
         <%#= f.input question, as: :hidden, input_html: { question.id } %>
         <%= hidden_field_tag 'question_id', question.id %>
-        <%= f.submit "Submit", class: "nes-btn" %>
+        <%= f.submit "Submit", class: "nes-btn is-disabled submit-btn", disabled: true %>
       <% end %>
   <% end %>
 
-
+  <script>
+    var checkbox = document.querySelectorAll(".form-check");
+    var submit = document.querySelector(".submit-btn");
+    checkbox.forEach(element => {
+      element.addEventListener('change', function() {
+        submit.classList.remove("is-disabled");
+        submit.disabled = false
+      })
+    });
+  </script>
 <!-- <div class="character" id="chara" style="transform: scaleX(-1);position:absolute; left: 400px;top:-330px">
   <%#= image_tag("character.png", height: '200', width: '131') %>
 </div> -->

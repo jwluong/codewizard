@@ -35,6 +35,8 @@ var game_result = () => {
   result.innerHTML = '<%= j render "gamecontrols/result", addBackground: @addBackground %>';
 };
 
+
+
 //change gif///////////////////////////////////////////////////////////
 var attack_position = () => {
   console.log(character_avatar)
@@ -176,7 +178,19 @@ var hurt = (object) => {
 };
 /////////////////////////////////////////////////////////////
 
+// var checkbox = document.querySelectorAll(".radio_buttons");
+// console.log(checkbox)
+// var submit = document.querySelector(".submit-btn");
+// checkbox.forEach(element => {
+//   console.log('hello')
+//   element.addEventListener('change', function() {
+//     submit.classList.remove("is-disabled");
+//     submit.disabled = false
+//     console.log(submit)
+//   })
+// });
 
+// console.log('hello')
 //choosing logic///////////////////////////////////////////////////////////
 switch(status) {
   case "next":
@@ -282,4 +296,3 @@ switch(status) {
 
     break;
 }
-
