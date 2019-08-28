@@ -10,7 +10,7 @@ User.create!(email: "test123@gmail.com", password: "testtest")
 
 
 # test character
-test = Character.new(name: "Steve", gender: "Wizard", coin: 100)
+test = Character.new(name: "Steve", gender: "male", coin: 100)
 test.user = User.first
 test.save!
 
