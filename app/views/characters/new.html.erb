@@ -8,7 +8,7 @@
           <%= f.input :name,
                     defaults: { wrapper: false },
                     input_html: { id: "name_field", class: "nes-input" } %>
-          <%= f.input :gender, as: :radio_buttons, collection: [['Male', 'Male'], ['Female', 'Female']], label_method: :second, value_method: :first%>
+          <%= f.input :gender, as: :radio_buttons, collection: [['male', 'Male'], ['female', 'Female']], label_method: :second, value_method: :first%>
           <div class="d-flex justify-content-center">
             <%= f.button :submit, "Create", class: "nes-btn is-success" %>
           </div>
