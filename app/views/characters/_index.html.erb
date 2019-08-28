@@ -1,0 +1,38 @@
+<div class="filter town_pro_fil">
+  <div class="container show_cont">
+    <div class="nes-container is-rounded w-75" style="background-color: white">
+      <a class="close_lnk"><i id="close" class="nes-icon close is-small close_btn profile-close" style="position: absolute; right: 5px; top: 5px"></i></a>
+      <h4 class="text-center" style="font-family:'press start 2p';margin:24px 0px;">Hall of Fame</h4>
+      <div class="nes-container is-rounded ">
+        <div class="award-list">
+          <div class="award">
+            <%= image_tag "score1", alt: "alttext", class: "number-one-icon"%>
+              <span class="champ-text"><%= @list[0].name %> (Lv.<%= @list[0].lv %>)</span>
+          </div>
+
+          <div class="award-2">
+            <%= image_tag "score2", alt: "alttext", class: "number-two-icon"%>
+              <span class="second-text"><%= @list[1].name %> (Lv.<%= @list[1].lv %>) </span>
+          </div>
+          <div class="award-2">
+            <%= image_tag "score3", alt: "alttext", class: "number-two-icon"%>
+              <span class="second-text"><%= @list[2].name %> (Lv.<%= @list[2].lv %>) </span>
+          </div>
+
+          <div class="rest">
+            <div class="rank-number">
+              <% (4..9).each do |num| %>
+                <p><%= num %>.</p>
+              <% end %>
+            </div>
+            <div class="rank-name">
+              <% @list[3...9].each_with_index do |character| %>
+                <p><%= character.name %> (Lv.<%= character.lv %>) </p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

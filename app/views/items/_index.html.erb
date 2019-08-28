@@ -18,7 +18,7 @@
               • <%= item.price %> coins
 
             </div>
-            <% if current_user.characters[0].enoughCoins?(item.price) && item.alreadyEquipped? == false%>
+            <% if current_user.characters[0].enoughCoins?(item.price) && item.alreadyEquipped? == false %>
               <%= link_to "Purchase", add_item_character_path(current_user.characters[0], item: item), method: :post, remote: true, class: "purchase-btn d-flex justify-content-center nes-btn is-warning" %>
               <!-- purchase alert -->
               <section>

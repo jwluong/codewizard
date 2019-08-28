@@ -7,12 +7,25 @@ User.destroy_all
 
 # test user
 User.create!(email: "test123@gmail.com", password: "testtest")
-
+(0..10).each do |num|
+  User.create!(email: "test0#{num}@gmail.com", password: "testtest")
+end
 
 # test character
 test = Character.new(name: "Steve", gender: "male", coin: 100)
 test.user = User.first
 test.save!
+
+Character.create!(name: "Savannah", gender: "female", lv:rand(1..7), user: User.all[1])
+Character.create!(name: "Serena", gender: "female", lv:rand(1..7), user: User.all[2])
+Character.create!(name: "Natalia", gender: "female", lv:rand(1..7), user: User.all[3])
+Character.create!(name: "Danette", gender: "male", lv:rand(1..7), user: User.all[4])
+Character.create!(name: "Abdurahman", gender: "male", lv:rand(1..7), user: User.all[5])
+Character.create!(name: "Kendal", gender: "male", lv:rand(1..7), user: User.all[6])
+Character.create!(name: "banana", gender: "female", lv:rand(1..7), user: User.all[7])
+Character.create!(name: "Zombies", gender: "female", lv:rand(1..7), user: User.all[8])
+Character.create!(name: "Yeties", gender: "male", lv:rand(1..7), user: User.all[9])
+Character.create!(name: "D0UL4S", gender: "male", lv:50, user: User.all[10])
 
 # levels
 Level.create!(name: "Ruby Basics I", number: 1, track: "easy", img: "bandit2")
