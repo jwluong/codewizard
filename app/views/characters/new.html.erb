@@ -1,5 +1,5 @@
 <div class="character-new d-flex align-items-center vh-100 justify-content-center" style="background-image: url( <%= image_url "char_create.jpg" %>">
-  <div class="new-form p-4 nes-container is-rounded w-75" style="background-color:white">
+  <div class="new-form p-4 nes-container is-rounded" style="width:60%;background-color:white">
     <div class="nes-container with-title is-rounded is-centered">
       <p class="title">Create your character</p>
       <div class="row">
@@ -8,14 +8,15 @@
           <%= f.input :name,
                     defaults: { wrapper: false },
                     input_html: { id: "name_field", class: "nes-input" } %>
-          <%= f.input :gender, as: :radio_buttons, collection: [['male', 'Male'], ['female', 'Female']], label_method: :second, value_method: :first%>
+          <%= f.input :gender, as: :radio_buttons, collection: [['Wizard', 'Wizard'], ['Witch', 'Witch']], label_method: :second, value_method: :first, checked: 'Wizard'%>
           <div class="d-flex justify-content-center">
             <%= f.button :submit, "Create", class: "nes-btn is-success" %>
           </div>
           <% end %>
         </div>
         <div class="col nes-container is-rounded d-flex align-items-center justify-content-center" style="background-position: bottom; background-image: url( <%= image_url "char_select.jpg" %>">
-          <div><%= image_tag("character.png") %></div>
+          <div id="male"><%= image_tag("avatar/male.gif", id: 'char_img') %></div>
+          <div id="female" class="hidden-char"><%= image_tag("avatar/female.gif", id: 'char_img') %></div>
         </div>
       </div>
     </div>
