@@ -10,9 +10,11 @@ var attack = document.getElementById('attack');
 
 // console.log(show_area)
 var status = "<%= @status %>";
+var level_id = "<%= @level.number %>";
 // console.log(status);
 console.log(character_avatar);
-console.log(monster.id);
+console.log(monster.src);
+console.log(level_id);
 // console.log(character_avatar.style);
 
 
@@ -227,12 +229,18 @@ switch(status) {
     delay(1)
     .then(() => {
       mon_attack_position();
+      if (level_id == 4 || level_id == 8) {
+        console.log("in id=4");
+        return delay(910);
+      } else {
       return delay(520);
+      };
     }).then(() => {
       mon_back_normal();
       set_mon_attack();
       mon_attack(attack);
-      return delay(600);
+        console.log("not in id=4");
+        return delay(600);
     }).then(() => {
       finish_attack();
       hurt(character_avatar);
