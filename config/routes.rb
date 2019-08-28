@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/wild', to: "gamecontrols#wild"
   get '/result', to: "gamecontrols#result"
   get '/close_profile', to: "gamecontrols#close_profile"
-  resources :characters, only: [:show, :new, :create] do
+  resources :characters, only: [:index, :show, :new, :create] do
     member do
       post 'add_item', to: "characters#add_item"
     end

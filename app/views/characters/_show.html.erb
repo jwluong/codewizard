@@ -23,9 +23,10 @@
           <div>
             <p><%= @character.name %></p>
             <% if @character.gender = 'male' %>
-              <p><%= Wizard %></p>
+              <p>Wizard</p>
             <% else %>
-              <p><%= Witch %></p>
+              <p>Witch</p>
+            <% end %>
             <br>
             <p><%= @character.lv %></p>
             <p><%= @character.hp %>/<%= current_user.characters[0].maxHealth %></p>

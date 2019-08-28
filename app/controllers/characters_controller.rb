@@ -1,4 +1,14 @@
 class CharactersController < ApplicationController
+  def index
+    @list = policy_scope(Character).order(lv: :desc).limit(10)
+    p'@list= '
+    p @list
+    respond_to do |format|
+      format.js # <-- will render `app/views/reviews/create.js.erb`
+      format.html { render 'gamecontrols/town' }
+    end
+  end
+
   def show
     @character = current_user.characters[0]
     authorize @character
