@@ -7,11 +7,9 @@
 }
 
 #attack{
-  position: absolute;
   // top:315px;
   // left:510px;
-  width:150px;
-  height:75px;
+  position: absolute;
   visibility:hidden;
 }
 
@@ -27,4 +25,10 @@
   // position: absolute;
   // top:165px;
   // left:895px;
+}
+
+#mon_attack{
+  -webkit-transform: scaleX(-1);
+  position: absolute;
+  visibility:hidden;
 }

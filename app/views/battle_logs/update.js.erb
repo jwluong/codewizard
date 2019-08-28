@@ -1,12 +1,13 @@
 console.log('calling update.js.erb')
 
-var show_area = document.getElementById('show_area');
-var result = document.getElementById('result');
+var show_area   = document.getElementById('show_area');
+var result      = document.getElementById('result');
 var character_avatar = document.getElementById('character_avatar');
-var monster = document.getElementById('monster');
+var monster     = document.getElementById('monster');
 var char_status = document.getElementById('status');
-var mon_status = document.getElementById('question_status');
-var attack = document.getElementById('attack');
+var mon_status  = document.getElementById('question_status');
+var attack      = document.getElementById('attack');
+var mon_attack  = document.getElementById('mon_attack');
 
 // console.log(show_area)
 var status = "<%= @status %>";
@@ -14,7 +15,7 @@ var level_id = "<%= @level.number %>";
 // console.log(status);
 console.log(character_avatar);
 console.log(monster.src);
-console.log(level_id);
+console.log(mon_attack);
 // console.log(character_avatar.style);
 
 
@@ -77,20 +78,21 @@ var mon_dead = () => {
 //normal attack///////////////////////////////////////////////////////////
 var set_attack = () =>{
   attack.style.visibility = "visible";
-  attack.src = '<%= image_url ("fireball.gif") %>';
-  attack.style.top = character_avatar.y + 143  + 'px';
+  attack.src = '<%= image_url ("avatar/#{current_user.characters[0].gender}_fire.gif") %>';
+  attack.style.top = character_avatar.y  + 'px';
   attack.style.left = character_avatar.x + 156 + 'px';
 };
 
 var set_mon_attack = () =>{
-  attack.style.visibility = "visible";
-  attack.style.transform = 'rotate(180deg)';
-  attack.style.top = monster.y +100 + 'px';
-  attack.style.left = monster.x  + 'px';
+  mon_attack.style.visibility = "visible";
+  mon_attack.src = '<%= image_url ("avatar/#{@level.img}_fire.gif") %>';
+  // mon_attack.style.transform = 'rotate(180deg)';
+  mon_attack.style.top = monster.y  + 'px';
+  mon_attack.style.left = monster.x  - 100+'px';
 };
 
-var finish_attack = () =>{
-  attack.style.visibility = "hidden";
+var finish_attack = (object) =>{
+  object.style.visibility = "hidden";
 };
 
 var char_attack = (attack_img) => {
@@ -106,9 +108,9 @@ var char_attack = (attack_img) => {
     }
 };
 
-var mon_attack = (attack_img) => {
+var monster_attack = (attack_img) => {
   var id = setInterval(frame, 1);
-  var pos = monster.x + 105;
+  var pos = monster.x - 100;
     function frame() {
       if (pos < character_avatar.x+70) {
         clearInterval(id);
@@ -138,13 +140,13 @@ var disappear = (object) => {
   console.log("in disappear");
   object.style.visibility = "hidden";
   console.log(object.style.visibility);
-}
+};
 
 var show = (object) => {
   console.log("in show");
   object.style.visibility = "visible";
   console.log(object.style.visibility);
-}
+};
 
 var hurt = (object) => {
   var delay_time = 100;
@@ -189,7 +191,7 @@ switch(status) {
       char_attack(attack);
       return delay(600);
     }).then(() => {
-      finish_attack();
+      finish_attack(attack);
       hurt(monster);
       return delay(700);
     }).then(() => {
@@ -211,7 +213,7 @@ switch(status) {
       char_attack(attack);
       return delay(600);
     }).then(() => {
-      finish_attack();
+      finish_attack(attack);
       mon_dead();
       return delay(600);
     }).then(() => {
@@ -229,20 +231,20 @@ switch(status) {
     delay(1)
     .then(() => {
       mon_attack_position();
-      if (level_id == 4 || level_id == 8) {
+      if (level_id == 4) {
         console.log("in id=4");
-        return delay(910);
+        return delay(800);
       } else {
-      return delay(520);
+        console.log("in 520");
+        return delay(520);
       };
     }).then(() => {
-      mon_back_normal();
       set_mon_attack();
-      mon_attack(attack);
-        console.log("not in id=4");
-        return delay(600);
+      monster_attack(mon_attack);
+      mon_back_normal();
+      return delay(500);
     }).then(() => {
-      finish_attack();
+      finish_attack(mon_attack);
       hurt(character_avatar);
       return delay(700);
     }).then(() => {
@@ -256,14 +258,20 @@ switch(status) {
     delay(1)
     .then(() => {
       mon_attack_position();
-      return delay(520);
+      if (level_id == 4) {
+        console.log("in id=4");
+        return delay(800);
+      } else {
+        console.log("in 520");
+        return delay(520);
+      };
     }).then(() => {
       mon_back_normal();
       set_mon_attack();
-      mon_attack(attack);
+      monster_attack(mon_attack);
       return delay(600);
     }).then(() => {
-      finish_attack();
+      finish_attack(mon_attack);
       dead(character_avatar);
       return delay(700);
     }).then(() => {
