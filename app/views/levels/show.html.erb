@@ -19,5 +19,55 @@
       <%= render 'questions/show', question: @question, addBackground: @addBackground %>
     </div>
   </div>
+
+  <% if @addBackground == "forest.png" %>
+    <%= audio_tag 'forest.mp3', loop: true, id: "audio_forest"%>
+
+    <script>
+      function playMusic(){
+          var promise = document.getElementById('audio_forest').play();
+          if (promise !== undefined) {
+              promise.then(_ => {
+                  // Autoplay started!
+              }).catch(error => {
+                  // Autoplay was prevented. Show a "Play" button so that user can start playback.
+              });
+          }
+      }
+      playMusic()
+    </script>
+  <% elsif @addBackground == "desert.jpg" %>
+    <%= audio_tag 'desert.mp3', loop: true, id: "audio_desert"%>
+
+    <script>
+      function playMusic(){
+          var promise = document.getElementById('audio_desert').play();
+          if (promise !== undefined) {
+              promise.then(_ => {
+                  // Autoplay started!
+              }).catch(error => {
+                  // Autoplay was prevented. Show a "Play" button so that user can start playback.
+              });
+          }
+      }
+      playMusic()
+    </script>
+    <% else %>
+      <%= audio_tag 'ice.mp3', loop: true, id: "audio_ice"%>
+
+      <script>
+        function playMusic(){
+            var promise = document.getElementById('audio_ice').play();
+            if (promise !== undefined) {
+                promise.then(_ => {
+                    // Autoplay started!
+                }).catch(error => {
+                    // Autoplay was prevented. Show a "Play" button so that user can start playback.
+                });
+            }
+        }
+        playMusic()
+      </script>
+  <% end %>
 </div>
 

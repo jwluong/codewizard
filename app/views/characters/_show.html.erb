@@ -22,10 +22,11 @@
         <div class="town_pro_rlinfo">
           <div>
             <p><%= @character.name %></p>
-            <% if @character.gender = 'male' %>
-              <p><%= Wizard %></p>
+            <% if @character.gender == 'male' %>
+              <p>Wizard</p>
             <% else %>
-              <p><%= Witch %></p>
+              <p>Witch</p>
+            <% end %>
             <br>
             <p><%= @character.lv %></p>
             <p><%= @character.hp %>/<%= current_user.characters[0].maxHealth %></p>
@@ -40,8 +41,7 @@
       </div>
     </div>
     <br>
-    <div class="nes-container with-title is-rounded">
-      <p class="title">Settings</p>
+    <div class="container">
       <div class="char_logout">
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nes-btn is-error" %>
       </div>
