@@ -14,15 +14,15 @@
           <p>LV. </p>
           <p>HP: </p>
           <p>EXP: </p>
-          <p>Items: </p>
           <%= image_tag "coin", alt: "alttext", class: "coin_gif" %> :
+          <p>Items: </p>
 
         </div>
 
         <div class="town_pro_rlinfo">
           <div>
             <p><%= @character.name %></p>
-            <% if @character.gender = 'male' %>
+            <% if @character.gender == 'male' %>
               <p>Wizard</p>
             <% else %>
               <p>Witch</p>
@@ -31,10 +31,10 @@
             <p><%= @character.lv %></p>
             <p><%= @character.hp %>/<%= current_user.characters[0].maxHealth %></p>
             <p><%= @character.exp %></p>
+            <p><%= @character.coin %></p>
             <% @character.items.each do |item| %>
               <p><%= item.name %></p>
             <% end %>
-            <p><%= @character.coin %></p>
           </div>
         </div>
 
@@ -43,8 +43,13 @@
     <br>
     <div class="nes-container with-title is-rounded">
       <p class="title">Settings</p>
-      <div class="char_logout">
-        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nes-btn is-error" %>
+      <div class=" d-flex justify-content-around">
+        <div class="char_logout">
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nes-btn is-error log-out-btn" %>
+        </div>
+        <div class="nes-btn is-primary">
+          <i class="fas fa-volume-up fa-2x"></i>
+        </div>
       </div>
     </div>
   </div>
