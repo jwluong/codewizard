@@ -1,9 +1,9 @@
-<div class="container landing vh-100 min-vw-100 d-flex justify-content-center" style="background-image: url( <%= image_url "landing.jpg" %>">
-  <div class="nes-container is-rounded info-box my-auto p-5">
-    <h1>Welcome to the world of Code Wizard!</h1>
-    <div class="register-buttons d-flex justify-content-center mt-4">
-      <%= link_to "Play", new_user_session_path, class: "m-3 px-4 nes-btn is-success" %>
-    </div>
+<div class="container landing vh-100 min-vw-100 d-flex flex-column align-items-center justify-content-center" style="background-image: url( <%= image_url "landing.jpg" %>">
+  <div>
+    <%= image_tag "title.png", style: 'height:185px;width:auto;'%>
+  </div>
+  <div class="register-buttons mt-4">
+    <%= link_to "Play", new_user_session_path, class: "m-3 px-4 nes-btn is-success" %>
   </div>
 </div>
 <div class="h-50 d-flex justify-content-center align-items-center instruction-1">

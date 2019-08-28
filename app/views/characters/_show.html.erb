@@ -22,7 +22,10 @@
         <div class="town_pro_rlinfo">
           <div>
             <p><%= @character.name %></p>
-            <p><%= @character.gender %></p>
+            <% if @character.gender = 'male' %>
+              <p><%= Wizard %></p>
+            <% else %>
+              <p><%= Witch %></p>
             <br>
             <p><%= @character.lv %></p>
             <p><%= @character.hp %>/<%= current_user.characters[0].maxHealth %></p>
