@@ -39,7 +39,7 @@ var attack_position = () => {
 };
 
 var mon_attack_position = () => {
-  monster.src = '<%= image_url ("avatar/bandit1_attc.gif") %>';
+  monster.src = '<%= image_url ("avatar/#{@level.img}_attc.gif") %>';
 };
 
 var back_normal = () => {
@@ -47,7 +47,7 @@ var back_normal = () => {
 };
 
 var mon_back_normal = () => {
-  monster.src = '<%= image_url ("avatar/bandit1.gif") %>';
+  monster.src = '<%= image_url ("avatar/#{@level.img}.gif") %>';
 };
 
 var dead = () => {
@@ -62,18 +62,20 @@ var dead = () => {
 };
 
 var mon_dead = () => {
+  // knight time too short
   delay(1)
     .then(() => {
-      monster.src = '<%= image_url ("avatar/bandit1_dead.gif") %>';
+      monster.src = '<%= image_url ("avatar/#{@level.img}_dead.gif") %>';
       return delay(910);
     }).then(() => {
-      monster.src = '<%= image_url ("avatar/bandit1_rip.png") %>';
+      monster.src = '<%= image_url ("avatar/#{@level.img}_rip.png") %>';
       return delay(1);
     });
 };
 //normal attack///////////////////////////////////////////////////////////
 var set_attack = () =>{
   attack.style.visibility = "visible";
+  attack.src = '<%= image_url ("fireball.gif") %>';
   attack.style.top = character_avatar.y + 143  + 'px';
   attack.style.left = character_avatar.x + 156 + 'px';
 };
@@ -119,10 +121,10 @@ var update_status = () => {
   console.log("in the update method");
   // console.log(char_status);
   char_status.innerHTML = '<%= j render "characters/status" %>';
-  mon_status.innerHTML = '<%= j render "questions/question_status", progress: @progress+1 %>';
 };
 
 var update_mon_status = () => {
+  mon_status.innerHTML = '<%= j render "questions/question_status", progress: @progress+1 %>';
 };
 //delay+promise///////////////////////////////////////////////////////////
 var delay = (ms) => new Promise(
@@ -191,6 +193,7 @@ switch(status) {
     }).then(() => {
       next_question();
       update_status();
+      update_mon_status();
       return delay(1);
     });
     break;
@@ -208,10 +211,11 @@ switch(status) {
     }).then(() => {
       finish_attack();
       mon_dead();
-      return delay(700);
+      return delay(600);
     }).then(() => {
       game_result();
       update_status();
+      update_mon_status();
       return delay(1);
     });
     break;
