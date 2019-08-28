@@ -15,8 +15,26 @@
   justify-content:center;
 }
 
+#question_status{
+  width:100%;
+  margin-left:auto;
+  margin-right:0;
+}
+
+.battle-field{
+  display:flex;
+  align-content: flex-end;
+  flex-wrap: wrap;
+}
+
 .question-area{
   background-color: white;
   flex-grow:1;
+}
 
+.mon-hp-bar{
+  float: right;
+  height:15px !important;
+  margin-bottom: -10px !important;
+  width:230px  !important;
 }
