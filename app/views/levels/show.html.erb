@@ -6,7 +6,21 @@
 
   <div class="battle-background" style="background-image: url(<%= image_url @addBackground %>);">
     <div style="position: absolute; float:right; width: 100%;" >
-    <%= link_to 'Town', root_path, class: "nes-btn is-primary return-btn" %>
+      <section>
+        <button type="button" class="nes-btn is-primary return-btn" onclick="document.getElementById('dialog-default').showModal();">
+          Town
+        </button>
+        <dialog class="nes-dialog is-rounded" id="dialog-default">
+          <form method="dialog">
+            <p>Return to town?</p>
+            <menu class="dialog-menu mr-4">
+              <%= link_to 'Confirm', root_path, class: "nes-btn is-primary" %>
+              <button class="nes-btn">Cancel</button>
+            </menu>
+          </form>
+        </dialog>
+      </section>
+
     </div>
     <div class="battle-field">
       <div id="question_status">
