@@ -59,7 +59,7 @@ Question.create!(description: "Which method returns the number of items in an ar
 
 Question.create!(description: "Which method splits a string into an array of strings?", options: [".split", ".join", ".to_s", ".convert_to_s"], answer: ".split", level: Level.all[1])
 
-Question.create!(description: "Which method can tell if an integer is odd?", options: [".checkIfOdd", ".odd", ".isOdd?", ".odd?"], answer: ".odd?", level: Level.all[1])
+Question.create!(description: "Which method can tell if an integer is odd?", options: [".checkIfOdd", ".testOdd", ".isOdd?", ".odd?"], answer: ".odd?", level: Level.all[1])
 
 Question.create!(description: "What does a ? at the end of a method name mean?", options: ["The method is unclear", "There is an unknown variable", "The method is a placeholder", "The method returns true or false"], answer: "The method returns true or false", level: Level.all[1])
 
