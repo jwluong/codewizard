@@ -18,10 +18,10 @@ test.save!
 
 Character.create!(name: "JT", gender: "male", lv:1, user: User.all[1])
 Character.create!(name: "Yuji", gender: "male", lv:1, user: User.all[2])
-Character.create!(name: "Christee", gender: "female", lv:2, user: User.all[3])
+Character.create!(name: "Kingsley", gender: "male", lv:2, user: User.all[3])
 Character.create!(name: "Shohei", gender: "male", lv:2, user: User.all[4])
-Character.create!(name: "Kinglsey", gender: "male", lv:4, user: User.all[5])
-Character.create!(name: "Mitch", gender: "male", lv:5, user: User.all[6])
+Character.create!(name: "Mitch", gender: "male", lv:4, user: User.all[5])
+Character.create!(name: "Jordan", gender: "male", lv:5, user: User.all[6])
 # Character.create!(name: "banana", gender: "female", lv:rand(1..7), user: User.all[7])
 # Character.create!(name: "Zombies", gender: "female", lv:rand(1..7), user: User.all[8])
 # Character.create!(name: "Yeties", gender: "male", lv:rand(1..7), user: User.all[9])
@@ -44,9 +44,7 @@ Level.create!(name: "OOP Advanced II", number: 12, track: "hard", img: "monster1
 # Ruby Basics I
 Question.create!(description: 'What is a method?', options: ['A set of expressions that returns a value', 'A container for storing data', 'A way to test applications', 'A framework for creating applications'], answer: 'A set of expressions that returns a value', level: Level.first)
 
-Question.create!(description: 'What does a ! at end of a method name mean?', options: ['It is an important method', 'Nothing', 'The method will permanently modify the value', 'The method will return true or false'], answer: 'The method will permanently modify the value', level: Level.first)
-
-Question.create!(description: 'Which method converts an integer to a string?', options: ['.to_s', '.to_string', 'METHOD: STRING CONVERT', '.convert_to_s'], answer: '.to_s', level: Level.first)
+Question.create!(description: 'What does a ! at the end of a method name mean?', options: ['It is an important method', 'Nothing', 'The method will permanently modify the value', 'The method will return true or false'], answer: 'The method will permanently modify the value', level: Level.first)
 
 Question.create!(description: 'How do you convert a string to an integer?', options: ['.to_num', '.convert_to_int', '.to_int', '.to_i'], answer: '.to_i', level: Level.first)
 
@@ -61,8 +59,6 @@ Question.create!(description: 'Which method splits a string into an array of str
 
 Question.create!(description: 'Which method can tell if an integer is odd?', options: ['.checkIfOdd', '.testOdd', '.isOdd?', '.odd?'], answer: '.odd?', level: Level.all[1])
 
-Question.create!(description: 'What does a ? at the end of a method name mean?', options: ['The method is unclear', 'There is an unknown variable', 'The method is a placeholder', 'The method returns true or false'], answer: 'The method returns true or false', level: Level.all[1])
-
 # Flow & Arrays
 Question.create!(description: 'What class will "14".to_i return?', options: ['String', 'Boolean', 'Symbol', 'Integer'], answer: 'Integer', level: Level.all[2])
 
@@ -72,8 +68,6 @@ Question.create!(description: 'What is a parameter?', options: ['A way to add in
 
 Question.create!(description: 'What happens if you omit the return in a method?', options: ['You get a Syntax Error', 'The last instruction of the method is returned', "Your method doesn't return anything", 'Your method deletes itself'], answer: 'The last instruction of the method is returned', level: Level.all[2])
 
-Question.create!(description: 'What will %w[Big Green Hobgoblin] return?', options: ['["Big", "Green", "Hobgoblin"]', 'Syntax Error', '[Big Green Hobgoblin]', '"Big Green Hobgoblin"'], answer: '["Big", "Green", "Hobgoblin"]', level: Level.all[2])
-
 # Flows & Arrays II
 Question.create!(description: 'What does "sword".capitalize return?', options: ['S W O R D', 'sWORD', 'Sword', 'SWORD'], answer: 'Sword', level: Level.all[3])
 
@@ -82,8 +76,6 @@ Question.create!(description: 'What will ["Sword", "Shield", "Armor"][1] return?
 Question.create!(description: 'What will calling .index on an item in an array do?', options: ['A way to add info to an array', 'Return the index of the item', 'Return the item', 'Return a key'], answer: 'Return the index of the item', level: Level.all[3])
 
 Question.create!(description: 'What is the correct syntax for a ternary statement?', options: ['condition ? code_when_truthy : code_when_falsey', 'condition ? code_when_falsey: code_when_truthy', 'There are no ternaries in Ruby', 'code_when_truthy : code_when_falsey ? condition'], answer: 'condition ? code_when_truthy : code_when_falsey', level: Level.all[3])
-
-Question.create!(description: 'What is an iterator?', options: ['A type of variable', 'A method that adds strings to an array', "A method that browses through a collection's items", 'A way to send data to methods'], answer: "A method that browses through a collection's items", level: Level.all[4])
 
 # Iterators & Blocks
 Question.create!(description: 'How do you define a method that accepts a block?', options: ['Using the yield keyword', "You can't", 'Using the block keyword', 'Using require_relative'], answer: 'Using the yield keyword', level: Level.all[4])
@@ -141,14 +133,10 @@ Question.create!(description: 'Which symbol do you use to set an instance variab
 
 Question.create!(description: 'How do you set a getter and a setter in one line?', options: ['attr_owner', 'attr_reader_writer', 'attr_accessor', 'attr_editor'], answer: 'attr_accessor', level: Level.all[10])
 
-Question.create!(description: 'What is a getter?', options: ['An instance method to read values', 'An instance method to write values', 'A class method to read variables', 'A class method to write variables'], answer: 'An instance method to read values', level: Level.all[10])
-
 # OOP Advanced II
 Question.create!(description: 'How do you set a getter and a setter in one line?', options: ['attr_owner', 'attr_reader_writer', 'attr_accessor', 'attr_editor'], answer: 'attr_accessor', level: Level.all[11])
 
 Question.create!(description: 'What does OOP stand for?', options: ['Oatmeal Oatmeal Pancake', 'Ordered-Objective Programming', 'Object-Ordered Programming', 'Object-Oriented Programming'], answer: 'Object-Oriented Programming', level: Level.all[11])
-
-Question.create!(description: 'What is a getter?', options: ['An instance method to read values', 'An instance method to write values', 'A class method to read variables', 'A class method to write variables'], answer: 'An instance method to read values', level: Level.all[11])
 
 Question.create!(description: 'What does the super keyword do?', options: ["Calls the parent's method which has the same name", 'Make this instance has higher priority', "Turn this instance into another instance's parent", 'A class method to write variables'], answer: "Calls the parent's method which has the same name", level: Level.all[11])
 
