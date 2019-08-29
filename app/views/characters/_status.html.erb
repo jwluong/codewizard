@@ -2,7 +2,6 @@
   <div class="main-info">
     <div class="char-avatar nes-container is-rounded" style="background-image: url('<%= image_url "avatar/#{current_user.characters[0].gender}_avt100.png", alt: "Avatar" %>');">
 
-
     </div>
     <div class="char-value">
       <% exp =  current_user.characters[0].exp %>
@@ -22,7 +21,7 @@
       <progress class="nes-progress is-primary exp-bar" value="<%= exp * 20 / lv %>" max="100"></progress>
     </div>
   </div>
-  <% if params[:action] == "town" %>
+  <% if @question.nil? %>
     <% area_name = "Town" %>
   <% else %>
     <% area_name = @question.level.name %>
@@ -32,3 +31,4 @@
     <span class="black-border-text char-lv">Lv: <%= lv %></span>
   </div>
 </div>
+

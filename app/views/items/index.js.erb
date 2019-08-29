@@ -1,4 +1,4 @@
-console.log("Call the show.js.erb")
+console.log("Call the items/index.js.erb")
 var profile = document.getElementById('profile');
   profile.innerHTML = '<%= j render "items/index" %>';
 
@@ -7,7 +7,8 @@ cls.addEventListener("click", function(){
     profile.innerHTML = "";
 });
 
-var confirm = document.getElementById('confirm-btn')
+
+var confirm = document.getElementById('confirm-btn');
 confirm.addEventListener("click", function(){
-  profile.innerHTML = "";
-})
+  location.reload();
+});
