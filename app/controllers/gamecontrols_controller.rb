@@ -3,6 +3,9 @@ class GamecontrolsController < ApplicationController
 
   def town
     authorize :gamecontrol, :town?
+    character = current_user.characters[0]
+    character.hp = character.maxHealth
+    character.save
   end
 
   def wild

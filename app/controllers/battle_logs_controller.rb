@@ -21,8 +21,6 @@ class BattleLogsController < ApplicationController
         @status = "next"
       else
         # render 'gamecontrols/result'
-        @character.hp = @character.lv + 9
-        @character.save
         @status = "result"
         @battle_log.completed = "yes"
         @battle_log.save
