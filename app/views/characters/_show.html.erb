@@ -14,7 +14,7 @@
           <p>LV. </p>
           <p>HP: </p>
           <p>EXP: </p>
-          <%= image_tag "coin", alt: "alttext", class: "coin_gif" %> :
+          <p> <%= image_tag "coin", alt: "alttext", class: "coin_gif" %>:</p>
           <p>Items: </p>
 
         </div>
@@ -29,7 +29,7 @@
             <% end %>
             <br>
             <p><%= @character.lv %></p>
-            <p><%= @character.hp %>/<%= current_user.characters[0].maxHealth %></p>
+            <p><%= @character.hp %>/<%= @character.maxHealth %></p>
             <p><%= @character.exp %></p>
             <p><%= @character.coin %></p>
             <% @character.items.each do |item| %>

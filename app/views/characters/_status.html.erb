@@ -8,8 +8,9 @@
       <% exp =  current_user.characters[0].exp %>
       <% lv = current_user.characters[0].lv %>
       <% hp = current_user.characters[0].hp %>
-      <% hp_ratio = hp * 100 / (lv + 9) %>
-      <span class="black-border-text status-content">Hp: <%= hp %>/<%= lv + 9 %></span>
+      <% maxhp = current_user.characters[0].maxHealth %>
+      <% hp_ratio = hp * 100 / maxhp %>
+      <span class="black-border-text status-content">Hp: <%= hp %>/<%= maxhp %></span>
       <% if hp_ratio > 50 %>
         <progress class="nes-progress is-success hp-bar" value="<%= hp_ratio %>" max="100"></progress>
       <% elsif hp_ratio > 30 %>
