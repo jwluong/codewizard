@@ -4,6 +4,7 @@ class Character < ApplicationRecord
   has_and_belongs_to_many :items
   has_many :level_progresses
   validates :name, :gender, presence: true
+  validates :name, length: { maximum: 10 }
 
   def enoughCoins?(price)
     self.coin >= price
