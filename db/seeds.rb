@@ -44,7 +44,7 @@ Level.create!(name: "OOP Advanced II", number: 12, track: "hard", img: "monster1
 # Ruby Basics I
 Question.create!(description: 'What is a method?', options: ['A set of expressions that returns a value', 'A container for storing data', 'A way to test applications', 'A framework for creating applications'], answer: 'A set of expressions that returns a value', level: Level.first)
 
-Question.create!(description: 'What does a ! at end of a method name mean?', options: ['It is an important method', 'Nothing', 'The method will permanently modify the value', 'The method will return true or false'], answer: 'The method will permanently modify the value', level: Level.first)
+Question.create!(description: 'What does a ! at the end of a method name mean?', options: ['It is an important method', 'Nothing', 'The method will permanently modify the value', 'The method will return true or false'], answer: 'The method will permanently modify the value', level: Level.first)
 
 Question.create!(description: 'How do you convert a string to an integer?', options: ['.to_num', '.convert_to_int', '.to_int', '.to_i'], answer: '.to_i', level: Level.first)
 
