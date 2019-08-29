@@ -3,12 +3,37 @@
   <%= render 'characters/status' %>
 </div>
 <div class="battle-scene">
+
   <div class="battle-background" style="background-image: url(<%= image_url @addBackground %>);">
+    <div style="position: absolute; float:right; width: 100%;" >
+      <section>
+        <button type="button" class="nes-btn is-primary return-btn" onclick="document.getElementById('dialog-default').showModal();">
+          Town
+        </button>
+        <dialog class="nes-dialog is-rounded" id="dialog-default">
+          <form method="dialog">
+            <p>Return to town?</p>
+            <menu class="dialog-menu mr-4">
+              <%= link_to 'Confirm', root_path, class: "nes-btn is-primary" %>
+              <button class="nes-btn">Cancel</button>
+            </menu>
+          </form>
+        </dialog>
+      </section>
+
+    </div>
     <div class="battle-field">
       <div id="question_status">
         <%= render 'questions/question_status', progress: @progress %>
       </div>
     <%= image_tag "avatar/#{current_user.characters[0].gender}.gif", alt: "alttext", id: "character_avatar" %>
+    <!-- move right a bit incase of forest level -->
+    <% if @addBackground == 'forest.png' %>
+      <script>
+        document.getElementById('character_avatar').classList.add("ml-5")
+      </script>
+    <% end %>
+
     <%= image_tag "avatar/#{@level.img}.gif", alt: "alttext", id: "monster" %>
     <%= image_tag "", alt: "attack" ,id: "attack"%>
     <%= image_tag "", alt: "mon_attack" ,id: "mon_attack"%>
