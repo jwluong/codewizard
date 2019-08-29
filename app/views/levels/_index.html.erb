@@ -28,7 +28,7 @@
           <div class="level-each-button">
             <% if level.track == "medium" %>
               <% if current_user.characters[0].clear_level?(level) %>
-                <%= image_tag "badge.png", alt: "badge", class: "badge" %>
+                <%= image_tag "badge.png", alt: "badge", class: "level-badge" %>
               <% end %>
                 <%= link_to level.name, level_path(level.questions[0]), class: "level-card m-2 nes-btn is-primary" ,style: "width:233px;" %>
             <% end %>
@@ -44,7 +44,7 @@
           <div class="level-each-button">
             <% if level.track == "hard" %>
               <% if current_user.characters[0].clear_level?(level) %>
-                <%= image_tag "badge.png", alt: "badge", class: "badge" %>
+                <%= image_tag "badge.png", alt: "badge", class: "level-badge" %>
               <% end %>
                 <%= link_to level.name, level_path(level.questions[0]), class: "level-card m-2 nes-btn is-primary" ,style: "width:233px;" %>
             <% end %>
