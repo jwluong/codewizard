@@ -116,9 +116,9 @@ Question.create!(description: 'How do you read a value in a Hash?', options: ["U
 Question.create!(description: 'How do you create an empty Hash?', options: ['Hash.new', 'Hash.create', '.hashCreate', 'create_hash = 1'], answer: 'Hash.new', level: Level.all[7])
 
 # OOP basics
-Question.create!(description: 'Which symbol do you use to set an instance variable?', options: ['()', '$', '#', '@'], answer: '@', level: Level.all[8])
+Question.create!(description: 'Which symbol do you use to set an instance variable?', options: ['&', '$', '#', '@'], answer: '@', level: Level.all[8])
 
-Question.create!(description: 'Which is the correct naming convention for a class?', options: ['SportsCar', 'sportsCar', 'sports_car', 'sports car'], answer: 'SportsCar', level: Level.all[8])
+Question.create!(description: 'Which is the correct naming convention for a class?', options: ['SportsCar', 'sportsCar', 'sportscar', 'sports car'], answer: 'SportsCar', level: Level.all[8])
 
 Question.create!(description: 'What does OOP stand for?', options: ['Oatmeal Oatmeal Pancake', 'Ordered-Objective Programming', 'Object-Ordered Programming', 'Object-Oriented Programming'], answer: 'Object-Oriented Programming', level: Level.all[8])
 
@@ -126,7 +126,7 @@ Question.create!(description: 'How do you set a getter and a setter in one line?
 
 
 # OOP basics II
-Question.create!(description: 'Which is the correct naming convention for a class?', options: ['SportsCar', 'sportsCar', 'sports_car', 'sports car'], answer: 'SportsCar', level: Level.all[9])
+Question.create!(description: 'Which is the correct naming convention for a class?', options: ['SportsCar', 'sportsCar', 'sportscar', 'sports car'], answer: 'SportsCar', level: Level.all[9])
 
 Question.create!(description: 'What does OOP stand for?', options: ['Oatmeal Oatmeal Pancake', 'Ordered-Objective Programming', 'Object-Ordered Programming', 'Object-Oriented Programming'], answer: 'Object-Oriented Programming', level: Level.all[9])
 
@@ -135,9 +135,9 @@ Question.create!(description: 'How do you set a getter and a setter in one line?
 Question.create!(description: 'What is a getter?', options: ['An instance method to read values', 'An instance method to write values', 'A class method to read variables', 'A class method to write variables'], answer: 'An instance method to read values', level: Level.all[9])
 
 # OOP Advanced I
-Question.create!(description: 'Which symbol do you use to set an instance variable?', options: ['()', '$', '#', '@'], answer: '@', level: Level.all[10])
+Question.create!(description: 'Which symbol do you use to set an instance variable?', options: ['&', '$', '#', '@'], answer: '@', level: Level.all[10])
 
-Question.create!(description: 'Which is the correct naming convention for a class?', options: ['SportsCar', 'sportsCar', 'sports_car', 'sports car'], answer: 'SportsCar', level: Level.all[10])
+Question.create!(description: 'Which is the correct naming convention for a class?', options: ['SportsCar', 'sportsCar', 'sportscar', 'sports car'], answer: 'SportsCar', level: Level.all[10])
 
 Question.create!(description: 'What does OOP stand for?', options: ['Oatmeal Oatmeal Pancake', 'Ordered-Objective Programming', 'Object-Ordered Programming', 'Object-Oriented Programming'], answer: 'Object-Oriented Programming', level: Level.all[10])
 
@@ -146,9 +146,9 @@ Question.create!(description: 'How do you set a getter and a setter in one line?
 Question.create!(description: 'What is a getter?', options: ['An instance method to read values', 'An instance method to write values', 'A class method to read variables', 'A class method to write variables'], answer: 'An instance method to read values', level: Level.all[10])
 
 # OOP Advanced II
-Question.create!(description: 'Which symbol do you use to set an instance variable?', options: ['()', '$', '#', '@'], answer: '@', level: Level.all[11])
+Question.create!(description: 'Which symbol do you use to set an instance variable?', options: ['&', '$', '#', '@'], answer: '@', level: Level.all[11])
 
-Question.create!(description: 'Which is the correct naming convention for a class?', options: ['SportsCar', 'sportsCar', 'sports_car', 'sports car'], answer: 'SportsCar', level: Level.all[11])
+Question.create!(description: 'Which is the correct naming convention for a class?', options: ['SportsCar', 'sportsCar', 'sportscar', 'sports car'], answer: 'SportsCar', level: Level.all[11])
 
 Question.create!(description: 'What does OOP stand for?', options: ['Oatmeal Oatmeal Pancake', 'Ordered-Objective Programming', 'Object-Ordered Programming', 'Object-Oriented Programming'], answer: 'Object-Oriented Programming', level: Level.all[11])
 
