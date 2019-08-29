@@ -1,7 +1,8 @@
 <div class="char-status">
   <div class="main-info">
-    <div class="char-avatar nes-container is-rounded">
-      <img src="http://spritedatabase.net/icon2/22265.png" alt=""  class="char-status-avatar">
+    <div class="char-avatar nes-container is-rounded" style="background-image: url('<%= image_url "avatar/#{current_user.characters[0].gender}_avt100.png", alt: "Avatar" %>');">
+
+
     </div>
     <div class="char-value">
       <% exp =  current_user.characters[0].exp %>
