@@ -124,7 +124,6 @@ Question.create!(description: 'What does OOP stand for?', options: ['Oatmeal Oat
 
 Question.create!(description: 'How do you set a getter and a setter in one line?', options: ['attr_owner', 'attr_reader_writer', 'attr_accessor', 'attr_editor'], answer: 'attr_accessor', level: Level.all[8])
 
-
 # OOP basics II
 Question.create!(description: 'Which is the correct naming convention for a class?', options: ['SportsCar', 'sportsCar', 'sportscar', 'sports car'], answer: 'SportsCar', level: Level.all[9])
 
@@ -132,29 +131,24 @@ Question.create!(description: 'What does OOP stand for?', options: ['Oatmeal Oat
 
 Question.create!(description: 'How do you set a getter and a setter in one line?', options: ['attr_owner', 'attr_reader_writer', 'attr_accessor', 'attr_editor'], answer: 'attr_accessor', level: Level.all[9])
 
-Question.create!(description: 'What is a getter?', options: ['An instance method to read values', 'An instance method to write values', 'A class method to read variables', 'A class method to write variables'], answer: 'An instance method to read values', level: Level.all[9])
 
 # OOP Advanced I
-Question.create!(description: 'Which symbol do you use to set an instance variable?', options: ['&', '$', '#', '@'], answer: '@', level: Level.all[10])
-
 Question.create!(description: 'Which is the correct naming convention for a class?', options: ['SportsCar', 'sportsCar', 'sportscar', 'sports car'], answer: 'SportsCar', level: Level.all[10])
 
 Question.create!(description: 'What does OOP stand for?', options: ['Oatmeal Oatmeal Pancake', 'Ordered-Objective Programming', 'Object-Ordered Programming', 'Object-Oriented Programming'], answer: 'Object-Oriented Programming', level: Level.all[10])
+
+Question.create!(description: 'Which symbol do you use to set an instance variable?', options: ['&', '$', '#', '@'], answer: '@', level: Level.all[10])
 
 Question.create!(description: 'How do you set a getter and a setter in one line?', options: ['attr_owner', 'attr_reader_writer', 'attr_accessor', 'attr_editor'], answer: 'attr_accessor', level: Level.all[10])
 
 Question.create!(description: 'What is a getter?', options: ['An instance method to read values', 'An instance method to write values', 'A class method to read variables', 'A class method to write variables'], answer: 'An instance method to read values', level: Level.all[10])
 
 # OOP Advanced II
-Question.create!(description: 'Which symbol do you use to set an instance variable?', options: ['&', '$', '#', '@'], answer: '@', level: Level.all[11])
-
-Question.create!(description: 'Which is the correct naming convention for a class?', options: ['SportsCar', 'sportsCar', 'sportscar', 'sports car'], answer: 'SportsCar', level: Level.all[11])
+Question.create!(description: 'How do you set a getter and a setter in one line?', options: ['attr_owner', 'attr_reader_writer', 'attr_accessor', 'attr_editor'], answer: 'attr_accessor', level: Level.all[11])
 
 Question.create!(description: 'What does OOP stand for?', options: ['Oatmeal Oatmeal Pancake', 'Ordered-Objective Programming', 'Object-Ordered Programming', 'Object-Oriented Programming'], answer: 'Object-Oriented Programming', level: Level.all[11])
 
-Question.create!(description: 'How do you set a getter and a setter in one line?', options: ['attr_owner', 'attr_reader_writer', 'attr_accessor', 'attr_editor'], answer: 'attr_accessor', level: Level.all[11])
-
-Question.create!(description: 'What does the super keyword do?', options: ["Calls the parent's method which has the same name", 'Make this instance has higher priority', "Turn this instance into another instance's parent", 'A class method to write variables'], answer: "Calls the parent's method which has the same name", level: Level.all[11])
+Question.create!(description: 'What is a getter?', options: ['An instance method to read values', 'An instance method to write values', 'A class method to read variables', 'A class method to write variables'], answer: 'An instance method to read values', level: Level.all[11])
 
 # items
 Item.create!(name: "Emerald Pendant", description: "Adds 1 health", effect: 1, price: "50", img: "pendant1.png")
