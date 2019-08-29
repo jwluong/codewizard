@@ -6,16 +6,16 @@
       <div class="nes-container is-rounded ">
         <div class="award-list">
           <div class="award">
-            <%= image_tag "score1", alt: "alttext", class: "number-one-icon"%>
-              <span class="champ-text"><%= @list[0].name %> (Lv.???)</span>
+            <%= image_tag "score1.png", alt: "alttext", class: "number-one-icon"%>
+              <span class="champ-text"><%= @list[0].name %> (Lv.<%= @list[0].lv %>)</span>
           </div>
 
           <div class="award-2">
-            <%= image_tag "score2", alt: "alttext", class: "number-two-icon"%>
+            <%= image_tag "score2.png", alt: "alttext", class: "number-two-icon"%>
               <span class="second-text"><%= @list[1].name %> (Lv.<%= @list[1].lv %>) </span>
           </div>
           <div class="award-2">
-            <%= image_tag "score3", alt: "alttext", class: "number-two-icon"%>
+            <%= image_tag "score3.png", alt: "alttext", class: "number-two-icon"%>
               <span class="second-text"><%= @list[2].name %> (Lv.<%= @list[2].lv %>) </span>
           </div>
 
