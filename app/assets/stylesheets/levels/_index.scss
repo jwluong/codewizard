@@ -16,12 +16,13 @@
   position:relative;
 }
 
-.badge{
+.level-badge{
   position:absolute;
   top:-5px;
-  left:-5px;
+  right:-5px;
   z-index:1;
-  background-color:#F7D51E;
+  width:33px;
+  height:42px;
 }
 .track{
   margin:24px 0px !important;
