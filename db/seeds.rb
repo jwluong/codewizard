@@ -16,16 +16,16 @@ test = Character.new(name: "Steve", gender: "male", coin: 100)
 test.user = User.first
 test.save!
 
-Character.create!(name: "Savannah", gender: "female", lv:rand(1..7), user: User.all[1])
-Character.create!(name: "Serena", gender: "female", lv:rand(1..7), user: User.all[2])
-Character.create!(name: "Natalia", gender: "female", lv:rand(1..7), user: User.all[3])
-Character.create!(name: "Danette", gender: "male", lv:rand(1..7), user: User.all[4])
-Character.create!(name: "Abdurahman", gender: "male", lv:rand(1..7), user: User.all[5])
-Character.create!(name: "Kendal", gender: "male", lv:rand(1..7), user: User.all[6])
-Character.create!(name: "banana", gender: "female", lv:rand(1..7), user: User.all[7])
-Character.create!(name: "Zombies", gender: "female", lv:rand(1..7), user: User.all[8])
-Character.create!(name: "Yeties", gender: "male", lv:rand(1..7), user: User.all[9])
-Character.create!(name: "D0UGL4S", gender: "male", lv:50, user: User.all[10])
+Character.create!(name: "JT", gender: "male", lv:1, user: User.all[1])
+Character.create!(name: "Yuji", gender: "male", lv:1, user: User.all[2])
+Character.create!(name: "Christee", gender: "female", lv:2, user: User.all[3])
+Character.create!(name: "Shohei", gender: "male", lv:2, user: User.all[4])
+Character.create!(name: "Kinglsey", gender: "male", lv:4, user: User.all[5])
+Character.create!(name: "Mitch", gender: "male", lv:5, user: User.all[6])
+# Character.create!(name: "banana", gender: "female", lv:rand(1..7), user: User.all[7])
+# Character.create!(name: "Zombies", gender: "female", lv:rand(1..7), user: User.all[8])
+# Character.create!(name: "Yeties", gender: "male", lv:rand(1..7), user: User.all[9])
+Character.create!(name: "Douglas", gender: "male", lv:50, user: User.all[7])
 
 # levels
 Level.create!(name: "Ruby Basics I", number: 1, track: "easy", img: "bandit2")
@@ -149,6 +149,11 @@ Question.create!(description: 'How do you set a getter and a setter in one line?
 Question.create!(description: 'What does OOP stand for?', options: ['Oatmeal Oatmeal Pancake', 'Ordered-Objective Programming', 'Object-Ordered Programming', 'Object-Oriented Programming'], answer: 'Object-Oriented Programming', level: Level.all[11])
 
 Question.create!(description: 'What is a getter?', options: ['An instance method to read values', 'An instance method to write values', 'A class method to read variables', 'A class method to write variables'], answer: 'An instance method to read values', level: Level.all[11])
+
+Question.create!(description: 'What does the super keyword do?', options: ["Calls the parent's method which has the same name", 'Make this instance has higher priority', "Turn this instance into another instance's parent", 'A class method to write variables'], answer: "Calls the parent's method which has the same name", level: Level.all[11])
+
+Question.create!(description: "What is class inheritance?", options: ["A class sharing the same structure and behaviour defined in another class", "Restricting the use of a class", "A class sharing the same name as another variable", "A more efficient version of a defined class"], answer: "A class sharing the same structure and behaviour defined in another class", level: Level.all[11])
+
 
 # items
 Item.create!(name: "Emerald Pendant", description: "Adds 1 health", effect: 1, price: "50", img: "pendant1.png")
