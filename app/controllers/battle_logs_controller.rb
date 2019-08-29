@@ -7,6 +7,9 @@ class BattleLogsController < ApplicationController
     @question = Question.find(params[:question_id])
     @level = @question.level
     user_answer = params[:battle_log][:user_answer]
+    @battle_log.user_answer = user_answer
+    @battle_log.save
+    p "battle question ID = #{@battle_log.question_id}"
     @progress = @level.questions.index(@question)
     @character = current_user.characters[0]
     setBackground(@question)
@@ -21,6 +24,10 @@ class BattleLogsController < ApplicationController
         @character.hp = @character.lv + 9
         @character.save
         @status = "result"
+        @battle_log.completed = "yes"
+        @battle_log.save
+        @top = BattleLog.where("completed = 'yes' AND question_id = #{@battle_log.question_id}").order('updated_at - created_at')
+        p "@top = #{@top}"
       end
     else
       if (@character.hp - 3) <= 0

@@ -12,6 +12,7 @@ var mon_attack  = document.getElementById('mon_attack');
 // console.log(show_area)
 var status = "<%= @status %>";
 var level_id = "<%= @level.number %>";
+var total_time = "<%= @total_time %>";
 // console.log(status);
 console.log(character_avatar);
 console.log(monster.src);
@@ -203,6 +204,7 @@ switch(status) {
     break;
   case "result":
     console.log("result");
+    console.log(total_time);
     delay(1)
     .then(() => {
       attack_position();
