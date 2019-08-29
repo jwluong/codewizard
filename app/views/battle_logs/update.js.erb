@@ -85,6 +85,7 @@ var mon_back_normal = () => {
 };
 
 var dead = () => {
+  document.getElementById('audio_dead').play();
   delay(1)
     .then(() => {
       character_avatar.src = '<%= image_url ("avatar/#{current_user.characters[0].gender}_dead.gif") %>';
@@ -97,6 +98,7 @@ var dead = () => {
 };
 
 var mon_dead = () => {
+  document.getElementById('audio_dead').play();
   // knight time too short
   delay(1)
     .then(() => {
@@ -183,11 +185,14 @@ var show = (object) => {
 
 var hurt = (object) => {
   var delay_time = 100;
+  document.getElementById('audio_hit').play();
   delay(1)
+
     .then(() => {
       disappear(object);
       return delay(delay_time);
     })
+
     .then(() => {
       show(object);
       return delay(delay_time);
