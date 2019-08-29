@@ -5,32 +5,45 @@
       <h2 class="result-title">Congratulations!</h2>
       <p>You've done an excellent job in</p>
       <p> <%= @level.name %>!</p>
-      <div class="nes-container with-title is-centered is-rounded rslt_prof">
-        <p class="title">Result</p>
-        <div class="rslt_info">
-        <div>
-          <p>Time: </p>
-          <p>Lv.</p>
-          <p>Exp:  </p>
-          <%= image_tag "coin", alt: "alttext", class: "coin_gif" %> :
-          <!-- <p>Coin: </p> -->
-        </div>
-
-        <div class="rslt_rlinfo">
+      <div class="show-result">
+        <div class="nes-container with-title is-centered is-rounded rslt_prof">
+          <p class="title">Result</p>
+          <div class="rslt_info">
           <div>
-          <p>01:23</p>
-          <p><%= @character.lv %></p>
-          <p>+<%= @level.questions.length %></p>
-          <p>+<%= @level.questions.length * 10 %></p>
+            <p>Time: </p>
+            <p>Lv.</p>
+            <p>Exp:  </p>
+            <%= image_tag "coin", alt: "alttext", class: "coin_gif" %> :
+            <!-- <p>Coin: </p> -->
+          </div>
+
+          <div class="rslt_rlinfo">
+            <div>
+            <p><%= @battle_log.play_time %></p>
+            <p><%= @character.lv %></p>
+            <p class="black-border-text-exp">+<%= @level.questions.length %></p>
+            <p class="black-border-text-coin">+<%= @level.questions.length * 10 %></p>
+            </div>
+          </div>
           </div>
         </div>
+        <div class="nes-container with-title is-centered is-rounded mini-score-board">
+          <p class="title">Top players</p>
+            <% if @top != nil %>
+              <% @top.first(3).each_with_index do |battlelog, index| %>
+                <span style="float:left"><%= index +1 %>. <%= battlelog.character.name %></span></br>
+                <span style="float:right">-<%= battlelog.play_time %></span></br>
+              <% end %>
+            <% end %>
         </div>
       </div>
-      <div class="hint-button-block">
-        <%= link_to "Town", town_path, class: "nes-btn rslt_btn"%>
-        <% if @level != Level.last %>
-          <%= link_to "Next", level_path(Level.find(@level.id + 1).questions[0]), class: "nes-btn is-warning hint-button" %>
-        <% end %>
+        <div class="hint-button-block">
+          <%= link_to "Town", town_path, class: "nes-btn rslt_btn"%>
+          <% if @level != Level.last %>
+            <%= link_to "Next", level_path(Level.find(@level.id + 1).questions[0]), class: "nes-btn is-warning hint-button" %>
+          <% end %>
+        </div>
+      <div>
       </div>
     </div>
   </div>

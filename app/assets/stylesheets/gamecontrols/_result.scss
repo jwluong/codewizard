@@ -19,9 +19,14 @@
 
     .rslt_prof {
       text-align: left;
+       width:245px;
+       margin-right: 24px;
+    }
+    .mini-score-board{
+     flex-grow: 1;
     }
 
-    .rslt_btns {
+    .rslt_btn {
       margin-top: 30px;
       align-self: center;
       display: flex;
@@ -31,13 +36,13 @@
   }
 }
 
-.result_body{
-  .filter {
-    .rslt_border{
-      padding-top: 2px;
-    }
-  }
-}
+// .result_body{
+//   .filter {
+//     .rslt_border{
+//       padding-top: 2px;
+//     }
+//   }
+// }
 
 
 .rslt_border {
@@ -58,7 +63,6 @@
   .rslt_rlinfo {
    display: flex;
    justify-content: center;
-   flex-grow: 1;
   }
 }
 
@@ -70,4 +74,19 @@
 .result-title{
   font-family:'press start 2p';
   text-align:center;
+}
+
+.black-border-text-coin{
+  text-shadow: -2px 0 #212529, 0 2px #212529, 2px 0 #212529, 0 -2px #212529;
+  color:#F2C409 !important;
+  font-size: 14px;
+}
+.black-border-text-exp{
+  text-shadow: -2px 0 #212529, 0 2px #212529, 2px 0 #212529, 0 -2px #212529;
+  color:#1F9CED !important;
+  font-size: 14px;
+}
+
+.show-result{
+  display:flex;
 }

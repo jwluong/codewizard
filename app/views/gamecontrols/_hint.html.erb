@@ -8,8 +8,8 @@
         <div class="p-2"><%= image_tag "grave.png", height: '150', width: '150' %></div>
     </div>
     <div class="hint-button-block">
+        <%= link_to "Return to Town", town_path, class: "nes-btn rslt_btn " %>
         <%= link_to "Try again", level_path(@level.questions[0]), class: "nes-btn is-warning hint-button" %>
-        <%= link_to "Return to Town", town_path, class: "nes-btn hint-button " %>
       </div>
     </div>
   </div>
