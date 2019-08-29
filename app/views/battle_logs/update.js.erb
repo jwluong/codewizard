@@ -21,10 +21,20 @@ console.log(mon_attack);
 
 var next_question = () => {
   show_area.innerHTML = '<%= j render "questions/show", question: @level.questions[@progress + 1], addBackground: @addBackground %>';
+  var checkbox = document.querySelectorAll(".form-check");
+  var submit = document.querySelector(".submit-btn");
+  checkbox.forEach(element => {
+    element.addEventListener('change', function() {
+      submit.classList.remove("is-disabled");
+      submit.disabled = false
+    })
+  });
+
+
 };
 
 var stayhere = () => {
-    show_area.innerHTML = '<%= j render "questions/show", question: @level.questions[@progress], addBackground: @addBackground %>';
+  show_area.innerHTML = '<%= j render "questions/show", question: @level.questions[@progress], addBackground: @addBackground %>';
 };
 
 var next_level = () => {
@@ -178,19 +188,6 @@ var hurt = (object) => {
 };
 /////////////////////////////////////////////////////////////
 
-// var checkbox = document.querySelectorAll(".radio_buttons");
-// console.log(checkbox)
-// var submit = document.querySelector(".submit-btn");
-// checkbox.forEach(element => {
-//   console.log('hello')
-//   element.addEventListener('change', function() {
-//     submit.classList.remove("is-disabled");
-//     submit.disabled = false
-//     console.log(submit)
-//   })
-// });
-
-// console.log('hello')
 //choosing logic///////////////////////////////////////////////////////////
 switch(status) {
   case "next":
