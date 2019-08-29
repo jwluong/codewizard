@@ -3,7 +3,11 @@
   <%= render 'characters/status' %>
 </div>
 <div class="battle-scene">
+
   <div class="battle-background" style="background-image: url(<%= image_url @addBackground %>);">
+    <div style="position: absolute; float:right; width: 100%;" >
+    <%= link_to 'Town', root_path, class: "nes-btn is-primary return-btn" %>
+    </div>
     <div class="battle-field">
       <div id="question_status">
         <%= render 'questions/question_status', progress: @progress %>
