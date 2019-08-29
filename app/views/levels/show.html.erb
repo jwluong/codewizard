@@ -9,6 +9,13 @@
         <%= render 'questions/question_status', progress: @progress %>
       </div>
     <%= image_tag "avatar/#{current_user.characters[0].gender}.gif", alt: "alttext", id: "character_avatar" %>
+    <!-- move right a bit incase of forest level -->
+    <% if @addBackground == 'forest.png' %>
+      <script>
+        document.getElementById('character_avatar').classList.add("ml-5")
+      </script>
+    <% end %>
+
     <%= image_tag "avatar/#{@level.img}.gif", alt: "alttext", id: "monster" %>
     <%= image_tag "fireball.gif", alt: "attack" ,id: "attack"%>
     <%= image_tag "", alt: "mon_attack" ,id: "mon_attack"%>

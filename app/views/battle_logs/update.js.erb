@@ -30,12 +30,18 @@ var next_question = () => {
       submit.disabled = false
     })
   });
-
-
 };
 
 var stayhere = () => {
   show_area.innerHTML = '<%= j render "questions/show", question: @level.questions[@progress], addBackground: @addBackground %>';
+  var checkbox = document.querySelectorAll(".form-check");
+  var submit = document.querySelector(".submit-btn");
+  checkbox.forEach(element => {
+    element.addEventListener('change', function() {
+      submit.classList.remove("is-disabled");
+      submit.disabled = false
+    })
+  });
 };
 
 var next_level = () => {
