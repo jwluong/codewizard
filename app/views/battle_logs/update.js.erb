@@ -71,10 +71,11 @@ var dead = () => {
     .then(() => {
       character_avatar.src = '<%= image_url ("avatar/#{current_user.characters[0].gender}_dead.gif") %>';
       return delay(700);
-    }).then(() => {
-      character_avatar.src = '<%= image_url ("avatar/#{current_user.characters[0].gender}_rip.png") %>';
-      return delay(1);
     });
+    // .then(() => {
+    //   character_avatar.src = '<%= image_url ("avatar/#{current_user.characters[0].gender}_rip.png") %>';
+    //   return delay(1);
+    // });
 };
 
 var mon_dead = () => {
@@ -83,10 +84,11 @@ var mon_dead = () => {
     .then(() => {
       monster.src = '<%= image_url ("avatar/#{@level.img}_dead.gif") %>';
       return delay(910);
-    }).then(() => {
-      monster.src = '<%= image_url ("avatar/#{@level.img}_rip.png") %>';
-      return delay(1);
     });
+    // .then(() => {
+    //   monster.src = '<%= image_url ("avatar/#{@level.img}_rip.png") %>';
+    //   return delay(1);
+    // });
 };
 //normal attack///////////////////////////////////////////////////////////
 var set_attack = () =>{

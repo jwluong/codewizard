@@ -8,10 +8,22 @@
 }
 
 .level-button{
-
   display:flex;
 }
 
+.level-each-button{
+  display:flex;
+  position:relative;
+}
+
+.level-badge{
+  position:absolute;
+  top:-5px;
+  right:-5px;
+  z-index:1;
+  width:33px;
+  height:42px;
+}
 .track{
   margin:24px 0px !important;
   background-size: cover;

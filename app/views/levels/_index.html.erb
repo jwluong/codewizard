@@ -9,9 +9,14 @@
         <p class="title">Easy</p>
         <div class="level-button">
           <% @levels.each do |level| %>
+            <div class="level-each-button">
             <% if level.track == "easy" %>
-                <%= link_to level.name, level_path(level.questions[0]), class: "level-card m-2 nes-btn is-primary" %>
+                <% if current_user.characters[0].clear_level?(level) %>
+                  <%= image_tag "badge.png", alt: "badge", class: "level-badge" %>
+                <% end %>
+                <%= link_to level.name, level_path(level.questions[0]), class: "level-card m-2 nes-btn is-primary" ,style: "width:233px;"%>
             <% end %>
+            </div>
           <% end %>
         </div>
       </div>
@@ -20,9 +25,14 @@
         <p class="title">Med.</p>
         <div class="level-button">
           <% @levels.each do |level| %>
+          <div class="level-each-button">
             <% if level.track == "medium" %>
-                <%= link_to level.name, level_path(level.questions[0]), class: "level-card m-2 nes-btn is-primary" %>
+              <% if current_user.characters[0].clear_level?(level) %>
+                <%= image_tag "badge.png", alt: "badge", class: "level-badge" %>
+              <% end %>
+                <%= link_to level.name, level_path(level.questions[0]), class: "level-card m-2 nes-btn is-primary" ,style: "width:233px;" %>
             <% end %>
+          </div>
           <% end %>
         </div>
       </div>
@@ -31,9 +41,14 @@
         <p class="title">Hard</p>
         <div class="level-button">
           <% @levels.each do |level| %>
+          <div class="level-each-button">
             <% if level.track == "hard" %>
-                <%= link_to level.name, level_path(level.questions[0]), class: "level-card m-2 nes-btn is-primary" %>
+              <% if current_user.characters[0].clear_level?(level) %>
+                <%= image_tag "badge.png", alt: "badge", class: "level-badge" %>
+              <% end %>
+                <%= link_to level.name, level_path(level.questions[0]), class: "level-card m-2 nes-btn is-primary" ,style: "width:233px;" %>
             <% end %>
+          </div>
           <% end %>
         </div>
 

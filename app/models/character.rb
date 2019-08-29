@@ -17,4 +17,11 @@ class Character < ApplicationRecord
     health
   end
 
+  def clear_level?(level)
+    result = false
+    battle_logs.where("completed = 'yes'").each do |log|
+      result = true if level.questions[0] == log.question
+    end
+    return result
+  end
 end
