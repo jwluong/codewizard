@@ -24,6 +24,12 @@ var next_question = () => {
   show_area.innerHTML = '<%= j render "questions/show", question: @level.questions[@progress + 1], addBackground: @addBackground %>';
   var checkbox = document.querySelectorAll(".form-check");
   var submit = document.querySelector(".submit-btn");
+  var checked = document.querySelectorAll(".custom-radio")
+
+  checked.forEach(element => {
+    element.checked = false
+  });
+
   checkbox.forEach(element => {
     element.addEventListener('change', function() {
       submit.classList.remove("is-disabled");
@@ -36,6 +42,12 @@ var stayhere = () => {
   show_area.innerHTML = '<%= j render "questions/show", question: @level.questions[@progress], addBackground: @addBackground %>';
   var checkbox = document.querySelectorAll(".form-check");
   var submit = document.querySelector(".submit-btn");
+  var checked = document.querySelectorAll(".custom-radio")
+
+  checked.forEach(element => {
+    element.checked = false
+  });
+
   checkbox.forEach(element => {
     element.addEventListener('change', function() {
       submit.classList.remove("is-disabled");
