@@ -33,10 +33,10 @@
               </section>
 
             <% elsif item.alreadyEquipped?(current_user.characters[0]) %>
-              <button type="button" class="nes-btn is-disabled">Already equipped</button>
+              <button type="button" class="nes-btn is-disabled" style="width:280px">Already equipped</button>
 
             <% else %>
-              <button type="button" class="nes-btn is-disabled">Not enough coins</button>
+              <button type="button" class="nes-btn is-disabled" style="width:280px">Not enough coins</button>
             <% end %>
 
           </div>
