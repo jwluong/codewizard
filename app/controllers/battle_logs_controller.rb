@@ -49,7 +49,7 @@ class BattleLogsController < ApplicationController
 
   def gain_exp_coin
     @character.exp += 1
-    @character.coin += 10
+    @character.coin += 15
     if @character.exp >= @character.lv * 5
       @character.lv += 1
       @character.exp -= (@character.lv - 1) * 5
