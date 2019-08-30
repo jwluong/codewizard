@@ -147,10 +147,10 @@ Question.create!(description: "What is class inheritance?", options: ["A class s
 Item.create!(name: "Emerald Pendant", description: "Adds 1 health", effect: 1, price: "50", img: "pendant1.png")
 Item.create!(name: "Ruby Necklace", description: "Adds 2 health", effect: 2, price: "100", img: "pendant2.png")
 
-BattleLog.create!(character: Character.all[6],updated_at: Time.now+99,question:q1,completed: "yes")
+BattleLog.create!(character: Character.all[6],updated_at: Time.now+ 99,question:q1,completed: "yes")
 BattleLog.create!(character: Character.all[1],updated_at: Time.now+500,question:q1,completed: "yes")
 BattleLog.create!(character: Character.all[3],updated_at: Time.now+183,question:q2,completed: "yes")
-BattleLog.create!(character: Character.all[7],updated_at: Time.now+30,question:q2,completed: "yes")
+BattleLog.create!(character: Character.all[7],updated_at: Time.now+ 30,question:q2,completed: "yes")
 
 # confirmation
 puts "Complete!"
