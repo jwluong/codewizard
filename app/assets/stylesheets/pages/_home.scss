@@ -63,3 +63,12 @@
 .footer-icon{
   color:#8187f9;
 }
+
+.github_page{
+  color: white;
+  text-decoration-line: underline;
+  &:hover{
+    color: white;
+    text-decoration-line: underline;
+  }
+}
