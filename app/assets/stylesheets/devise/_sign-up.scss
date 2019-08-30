@@ -1,0 +1,16 @@
+.was-validated .form-control:invalid, .form-control.is-invalid{
+    //   border-image-slice: 2;
+    // border-image-width: 2;
+    // border-image-repeat: stretch;
+    // border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version… v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(30,221,4135)" /></svg>');
+    // border-image-outset: 2;
+    // width: 100%;
+    // padding: .5rem 1rem;
+    // margin: 4px;
+    // background-clip: padding-box;
+    border-image-source: none !important;
+}
+
+.was-validated .form-control:valid, .form-control.is-valid{
+    border-image-source: none !important;
+}
