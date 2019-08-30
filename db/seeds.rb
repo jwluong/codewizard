@@ -42,7 +42,7 @@ Level.create!(name: "OOP Advanced I", number: 11, track: "hard", img: "bandit3")
 Level.create!(name: "OOP Advanced II", number: 12, track: "hard", img: "monster1")
 
 # Ruby Basics I
-Question.create!(description: 'What is a method?', options: ['A set of expressions that returns a value', 'A container for storing data', 'A way to test applications', 'A framework for creating applications'], answer: 'A set of expressions that returns a value', level: Level.first)
+q1 = Question.create!(description: 'What is a method?', options: ['A set of expressions that returns a value', 'A container for storing data', 'A way to test applications', 'A framework for creating applications'], answer: 'A set of expressions that returns a value', level: Level.first)
 
 Question.create!(description: 'What does a ! at the end of a method name mean?', options: ['It is an important method', 'Nothing', 'The method will permanently modify the value', 'The method will return true or false'], answer: 'The method will permanently modify the value', level: Level.first)
 
@@ -69,7 +69,7 @@ Question.create!(description: 'What is a parameter?', options: ['A way to add in
 Question.create!(description: 'What happens if you omit the return in a method?', options: ['You get a Syntax Error', 'The last instruction of the method is returned', "Your method doesn't return anything", 'Your method deletes itself'], answer: 'The last instruction of the method is returned', level: Level.all[2])
 
 # Flows & Arrays II
-Question.create!(description: 'What does "sword".capitalize return?', options: ['S W O R D', 'sWORD', 'Sword', 'SWORD'], answer: 'Sword', level: Level.all[3])
+# Question.create!(description: 'What does "sword".capitalize return?', options: ['S W O R D', 'sWORD', 'Sword', 'SWORD'], answer: 'Sword', level: Level.all[3])
 
 Question.create!(description: 'What will ["Sword", "Shield", "Armor"][1] return?', options: ['"Shield"', 'Sword', '1', 'Armor'], answer: '"Shield"', level: Level.all[3])
 
@@ -134,7 +134,7 @@ Question.create!(description: 'Which symbol do you use to set an instance variab
 Question.create!(description: 'How do you set a getter and a setter in one line?', options: ['attr_owner', 'attr_reader_writer', 'attr_accessor', 'attr_editor'], answer: 'attr_accessor', level: Level.all[10])
 
 # OOP Advanced II
-Question.create!(description: 'How do you set a getter and a setter in one line?', options: ['attr_owner', 'attr_reader_writer', 'attr_accessor', 'attr_editor'], answer: 'attr_accessor', level: Level.all[11])
+q2 = Question.create!(description: 'How do you set a getter and a setter in one line?', options: ['attr_owner', 'attr_reader_writer', 'attr_accessor', 'attr_editor'], answer: 'attr_accessor', level: Level.all[11])
 
 Question.create!(description: 'What does OOP stand for?', options: ['Oatmeal Oatmeal Pancake', 'Ordered-Objective Programming', 'Object-Ordered Programming', 'Object-Oriented Programming'], answer: 'Object-Oriented Programming', level: Level.all[11])
 
@@ -146,6 +146,11 @@ Question.create!(description: "What is class inheritance?", options: ["A class s
 # items
 Item.create!(name: "Emerald Pendant", description: "Adds 1 health", effect: 1, price: "50", img: "pendant1.png")
 Item.create!(name: "Ruby Necklace", description: "Adds 2 health", effect: 2, price: "100", img: "pendant2.png")
+
+BattleLog.create!(character: Character.all[6],updated_at: Time.now+99,question:q1,completed: "yes")
+BattleLog.create!(character: Character.all[1],updated_at: Time.now+500,question:q1,completed: "yes")
+BattleLog.create!(character: Character.all[3],updated_at: Time.now+183,question:q2,completed: "yes")
+BattleLog.create!(character: Character.all[7],updated_at: Time.now+30,question:q2,completed: "yes")
 
 # confirmation
 puts "Complete!"
