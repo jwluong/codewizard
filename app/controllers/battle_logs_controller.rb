@@ -17,7 +17,6 @@ class BattleLogsController < ApplicationController
       gain_exp_coin
       if !@level.questions[@progress + 1].nil?
         # render 'questions/show', question: @level.questions[@progress + 1]
-        @character.save
         @status = "next"
       else
         # render 'gamecontrols/result'
@@ -54,5 +53,6 @@ class BattleLogsController < ApplicationController
       @character.lv += 1
       @character.exp -= (@character.lv - 1) * 5
     end
+    @character.save
   end
 end
