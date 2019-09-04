@@ -1,6 +1,6 @@
 # Code Wizard
 
-A Rails app I made in 9 days designed to gamify flash cards.
+A Rails app made in 9 days designed to gamify flash cards.
 
 ## Motivation
 After experiencing how boring and dull simple multiple-choice quizzes and flash cards are, Code Wizard was created as an attempt to make learning the basics of Ruby more interesting and engaging.
