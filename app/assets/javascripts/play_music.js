@@ -8,11 +8,12 @@ const playMusic = () => {
 
   if (musicStatus === true) {
     document.getElementById('audio').play();
+    document.querySelectorAll("audio").forEach(elem => elem.muted = false);
 
     musicIcon.classList.remove("fa-volume-mute");
     musicIcon.classList.add("fa-volume-up");
   } else {
-    document.getElementById('audio').pause();
+    document.querySelectorAll("audio").forEach(elem => elem.muted = true);
 
     musicIcon.classList.remove("fa-volume-up");
     musicIcon.classList.add("fa-volume-mute");
