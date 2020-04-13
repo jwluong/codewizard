@@ -1,6 +1,6 @@
 <div class="landing vh-100 min-vw-99 d-flex flex-column align-items-center justify-content-center" style="background-image: url( <%= image_url "landing.jpg" %>">
-  <a class="nes-btn audio-button" onclick="playMusic();">
-    <%= image_tag "sound-off.png", style: 'image-rendering: pixelated; height:30px; width:30px'%>
+  <a class="nes-btn is-primary audio-button text-white" onclick="toggleMusic();">
+    <i class="fas fa-volume-mute fa-2x" id="musicIcon"></i>
   </a>
   <div>
     <%= image_tag "title.png", style: 'height:185px;width:auto;'%>
@@ -33,4 +33,4 @@
   </div>
 </div>
 
-<%= audio_tag 'landing.mp3', loop: true, id: "audio_landing"%>
+<%= audio_tag 'landing.mp3', loop: true, id: "audio"%>

@@ -47,15 +47,11 @@
         <div class="char_logout">
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nes-btn is-error log-out-btn" %>
         </div>
-        <div class="nes-btn is-primary" id="mute">
-          <i class="fas fa-volume-up fa-2x"></i>
+        <div class="nes-btn is-primary" onclick="toggleMusic();">
+          <i class="fas fa-volume-mute fa-2x" id="musicIcon"></i>
         </div>
       </div>
     </div>
   </div>
   </div>
 </div>
-
-<!-- <script>
-  document.getElementById("mute").addEventListener
-</script> -->
