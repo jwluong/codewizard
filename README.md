@@ -25,7 +25,7 @@ After experiencing how boring and dull simple multiple-choice quizzes and flash 
 ![Battle Page](https://i.imgur.com/ihVg6Jb.png)
 
 ## Credits
-Code Wizard was originally made in collaboration with [JT Weng](https://github.com/wengair/) and [Yuji Masuda](https://github.com/yujimsd) over a period of 9 days as part of our final project at [Le Wagon coding bootcamp](https://www.lewagon.com/).
+Code Wizard was originally made in collaboration with [JT Weng](https://github.com/wengair/) and [Yuji Masuda](https://github.com/yujimsd) over a period of 9 days in August 2019 as part of our final project at [Le Wagon coding bootcamp](https://www.lewagon.com/).
 
 This fork represents my continuing work on Code Wizard as a personal project in order to improve my Ruby on Rails and HTML/CSS/Javascript ability.
 
