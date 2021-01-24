@@ -1,5 +1,7 @@
 # Code Wizard
 
+**Live version:** [https://code-wizard-1.herokuapp.com/](https://code-wizard-1.herokuapp.com/)
+
 A Rails app designed to gamify flash cards.
 
 ## Motivation
@@ -13,9 +15,6 @@ After experiencing how boring and dull simple multiple-choice quizzes and flash 
 - Fully functional item and inventory system
 
 - Working Leaderboard and points system
-
-## Getting started
-**Live version:** [https://code-wizard-1.herokuapp.com/](https://code-wizard-1.herokuapp.com/)
 
 ## Screenshots
 ![Title Page](https://i.imgur.com/io4fWij.jpg)
